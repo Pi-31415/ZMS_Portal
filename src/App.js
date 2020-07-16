@@ -6,6 +6,7 @@ import {
   Link,
 } from 'react-router-dom';
 
+
 //Add Pages
 import SignInSide from './pages/SignIn';
 import SignUp from './pages/SignUp';
@@ -14,15 +15,15 @@ const App = props => {
   return (
     <Router>
       <div>
-        <ul>
-          <b>List of Pages - For Development Purposes Only</b>
-          
-          <li><Link to="/portal">Log In</Link></li>
-          <li><Link to="/portal/signup">Sign Up</Link></li>
-        </ul>
+        <div style={{ background: '#009688', padding: 10, color:'#fff' }}>
+          <b>(Development Mode) Completed Pages : </b> 
+          <Link to="/portal" style={{color:'#fff'}}>Log In</Link>
+          {' | '} 
+          <Link to="/portal/signup" style={{color:'#fff'}}>Sign Up</Link>
+        </div>
         <div style={{ padding: 0 }}>
           <Switch>
-            
+
             <Route path="/portal/signup"><SignUp></SignUp></Route>
             <Route path="/portal"><SignInSide></SignInSide></Route>
           </Switch>

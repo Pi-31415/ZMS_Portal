@@ -10,6 +10,7 @@ import Container from '@material-ui/core/Container';
 import zmslogo from '../img/favicon_source.png';
 import Copyright from '../components/copyright';
 import Typography from '@material-ui/core/Typography';
+import '../scss/custom.scss';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -99,7 +100,7 @@ export default function SignUp() {
                     </Button>
                     <Box mt={5} align="center">
                         <Typography>
-                            <Link to="/portal">{"Already have an account? Log In."}</Link>
+                            <Link className="custom-link" to="/portal">{"Already have an account? Log In."}</Link>
                         </Typography>
                     </Box>
                 </form>

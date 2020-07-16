@@ -5,7 +5,7 @@ class Copyright extends React.Component {
     render() {
         return (
             <Typography variant="body2" color="textSecondary" align="center">
-                {'Copyright © ZMD Education & Technology '}
+                {'Copyright © ZMS Education & Technology '}
                 {new Date().getFullYear()}
                 {'.'}
             </Typography>

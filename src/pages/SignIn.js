@@ -10,14 +10,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import zmslogo from '../img/favicon_source.png';
 import Copyright from '../components/copyright';
 import Typography from '@material-ui/core/Typography';
-
+import '../scss/custom.scss';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     height: '100vh',
   },
   image: {
-    backgroundImage: 'url(http://zmsedu.com/img/pen.jpg)',
+    backgroundImage: 'url(http://zmsedu.com/img/banner.jpeg)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
@@ -86,7 +86,7 @@ export default function SignInSide() {
             </Button>
             <Box mt={5} align="center">
               <Typography>
-                <Link to="/portal/signup">{"Don't have an account? Sign Up"}</Link>
+                <Link to="/portal/signup" className="custom-link">{"Don't have an account? Sign Up"}</Link>
               </Typography>
             </Box>
             <Box mt={5}>
