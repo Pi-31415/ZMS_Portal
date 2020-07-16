@@ -2,13 +2,14 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
+import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import zmslogo from '../img/favicon_source.png';
 import Copyright from '../components/copyright';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -97,7 +98,9 @@ export default function SignUp() {
                         Sign Up
                     </Button>
                     <Box mt={5} align="center">
-                        <Link href="/portal" variant="body2">{"Already have an account? Log In."}</Link>
+                        <Typography>
+                            <Link to="/portal">{"Already have an account? Log In."}</Link>
+                        </Typography>
                     </Box>
                 </form>
             </div>
