@@ -84,7 +84,7 @@ export default function SignInSide() {
               Log in
             </Button>
             <Box mt={5}  align="center">
-            <Link to="/signup"  variant="body2">{"Don't have an account? Sign Up"}</Link>
+            <Link to="/portal/signup"  variant="body2">{"Don't have an account? Sign Up"}</Link>
             </Box>
             <Box mt={5}>
               <Copyright />

@@ -97,7 +97,7 @@ export default function SignUp() {
                         Sign Up
                     </Button>
                     <Box mt={5} align="center">
-                        <Link to="/" variant="body2">{"Already have an account? Log In."}</Link>
+                        <Link to="/portal" variant="body2">{"Already have an account? Log In."}</Link>
                     </Box>
                 </form>
             </div>
