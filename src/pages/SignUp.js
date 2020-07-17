@@ -89,6 +89,11 @@ export default function SignUp() {
                             />
                         </Grid>
                     </Grid>
+                    <Box mb={1} mt={4}>
+                        <Typography align="center">
+                            By clicking "Sign Up" you agree to <br></br><Link className="custom-link" to="/portal/terms">{"Our Terms"}</Link> and <Link className="custom-link" to="/portal/privacy">{"Privacy Policy"}</Link>
+                        </Typography>
+                    </Box>
                     <Button
                         type="submit"
                         fullWidth
@@ -105,7 +110,7 @@ export default function SignUp() {
                     </Box>
                 </form>
             </div>
-            <Box mt={5}>
+            <Box mt={5} mb={10}>
                 <Copyright />
             </Box>
         </Container>

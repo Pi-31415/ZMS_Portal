@@ -3,9 +3,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
-import Typography from '@material-ui/core/Typography';
 import ReactMarkdown from "react-markdown";
+import { Link } from 'react-router-dom';
+import '../scss/custom.scss';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -204,20 +206,23 @@ export default function Terms() {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} style={{background:'#eee'}}>
             <Container fixed>
-
                 <Grid container spacing={3}>
                     <Grid item xs={12}></Grid>
-                    <Grid item xs={12}>
-                        <Link href="/signup" align="center"><Typography component="p">Go Back</Typography></Link>
+                    <Grid item xs={12} align="center">
+                        <Typography>
+                            <Link to="/portal/signup" className="custom-link">{"Go Back"}</Link>
+                        </Typography>
                     </Grid>
                     <Grid item xs={12}>
-                        <Paper className={classes.paper}>
-                            <Container fixed>
-                                <ReactMarkdown source={markdown} />
-                            </Container>
-                        </Paper>
+                        <Box mb={10}>
+                            <Paper className={classes.paper}>
+                                <Container fixed>
+                                    <ReactMarkdown source={markdown} />
+                                </Container>
+                            </Paper>
+                        </Box>
                     </Grid>
                 </Grid>
             </Container>
