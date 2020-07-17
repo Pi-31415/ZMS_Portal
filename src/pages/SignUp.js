@@ -52,7 +52,7 @@ export default function SignUp() {
                 <form className={classes.form} noValidate>
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={12}>
-                            <Box mb={3} align="center">
+                            <Box mb={2} align="center">
                             <FormControl className={classes.formControl}  style={{minWidth: 220}}>
                             <InputLabel id="demo-simple-select-label">I am a</InputLabel>
                                 <Select
@@ -114,7 +114,7 @@ export default function SignUp() {
                             />
                         </Grid>
                     </Grid>
-                    <Box mb={1} mt={4}>
+                    <Box mb={1} mt={2}>
                         <Typography align="center">
                             By clicking "Sign Up" you agree to <br></br><Link className="custom-link" to="/portal/terms">{"Our Terms"}</Link> and <Link className="custom-link" to="/portal/privacy">{"Privacy Policy"}</Link>
                         </Typography>
@@ -128,7 +128,7 @@ export default function SignUp() {
                     >
                         Sign Up
                     </Button>
-                    <Box mt={5} align="center">
+                    <Box mt={1} align="center">
                         <Typography>
                             <Link className="custom-link" to="/portal">{"Already have an account? Log In."}</Link>
                         </Typography>
