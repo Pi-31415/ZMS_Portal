@@ -27,7 +27,7 @@ export default function Classroom() {
             <CssBaseline />
             <AppBar>
                 <Toolbar>
-                    <Link to="/portal/dashboard" style={{color:'#fff'}}>
+                    <Link to="/portal/dashboard/home" style={{color:'#fff'}}>
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <ArrowBackIcon />
                     </IconButton>

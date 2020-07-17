@@ -14,6 +14,7 @@ import Dashboard from './pages/dashboard';
 import Terms from './pages/terms';
 import Privacy from './pages/privacy';
 import Classroom from './pages/classroom';
+import Schedule from './pages/schedule';
 
 
 const App = props => {
@@ -23,7 +24,8 @@ const App = props => {
         <div style={{ padding: '0',margin:'0' }}>
           <Switch>
             <Route path="/portal/signup"><SignUp></SignUp></Route>
-            <Route path="/portal/dashboard"><Dashboard></Dashboard></Route>
+            <Route path="/portal/dashboard/home"><Dashboard></Dashboard></Route>
+            <Route path="/portal/dashboard/schedule"><Schedule></Schedule></Route>
             <Route path="/portal/terms"><Terms></Terms></Route>
             <Route path="/portal/privacy"><Privacy></Privacy></Route>
             <Route path="/portal/classroom"><Classroom></Classroom></Route>
@@ -40,7 +42,9 @@ const App = props => {
           {' | '} 
           <Link to="/portal/privacy" style={{color:'#fff'}}>Privacy Policy</Link>
           {' | '} 
-          <Link to="/portal/dashboard/" style={{color:'#fff'}}>Dashboard</Link>
+          <Link to="/portal/dashboard/home" style={{color:'#fff'}}>Dashboard</Link>
+          {' | '} 
+          <Link to="/portal/dashboard/schedule" style={{color:'#fff'}}>Schedule</Link>
           {' | '} 
           <Link to="/portal/classroom" style={{color:'#fff'}}>Classroom</Link>
         </div>
