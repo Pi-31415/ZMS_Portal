@@ -13,22 +13,24 @@ import SignUp from './pages/SignUp';
 import Dashboard from './pages/dashboard';
 import Terms from './pages/terms';
 import Privacy from './pages/privacy';
+import Classroom from './pages/classroom';
 
 
 const App = props => {
   return (
     <Router>
       <div>
-        <div style={{ padding: 0 }}>
+        <div style={{ padding: '0',margin:'0' }}>
           <Switch>
             <Route path="/portal/signup"><SignUp></SignUp></Route>
             <Route path="/portal/dashboard"><Dashboard></Dashboard></Route>
             <Route path="/portal/terms"><Terms></Terms></Route>
             <Route path="/portal/privacy"><Privacy></Privacy></Route>
+            <Route path="/portal/classroom"><Classroom></Classroom></Route>
             <Route path="/portal"><SignInSide></SignInSide></Route>
           </Switch>
         </div>
-        <div style={{ background: '#009688', padding: 10, color:'#fff' }}>
+        <div style={{ background: '#009688', padding: '0',margin:'0', color:'#fff' }}>
           <b>(Development Mode) Completed Pages : </b> 
           <Link to="/portal" style={{color:'#fff'}}>Log In</Link>
           {' | '} 
@@ -38,7 +40,9 @@ const App = props => {
           {' | '} 
           <Link to="/portal/privacy" style={{color:'#fff'}}>Privacy Policy</Link>
           {' | '} 
-          <Link to="/portal/dashboard" style={{color:'#fff'}}>Dashboard</Link>
+          <Link to="/portal/dashboard/" style={{color:'#fff'}}>Dashboard</Link>
+          {' | '} 
+          <Link to="/portal/classroom" style={{color:'#fff'}}>Classroom</Link>
         </div>
       </div>
     </Router>
