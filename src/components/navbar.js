@@ -99,14 +99,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Navbar() {
     const classes = useStyles();
-    const [open, setOpen] = React.useState(true);
+    const [open, setOpen] = React.useState(false);
     const handleDrawerOpen = () => {
         setOpen(true);
     };
     const handleDrawerClose = () => {
         setOpen(false);
     };
-
     return (<>
         <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
             <Toolbar className={classes.toolbar}>
@@ -124,7 +123,7 @@ export default function Navbar() {
           </Typography>
                 <Link to="/portal/dashboard/notif" style={{ color: '#fff' }}>
                     <IconButton color="inherit">
-                        <Badge badgeContent={4} color="secondary">
+                        <Badge badgeContent={3} color="secondary">
                             <NotificationsIcon />
                         </Badge>
                     </IconButton>

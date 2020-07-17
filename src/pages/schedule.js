@@ -86,17 +86,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Dashboard() {
   const classes = useStyles();
- 
-
   return (
     <div className={classes.root}>
       <CssBaseline />
       <Navbar></Navbar>
-      
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <h1>Schedule</h1>
+          <p>Migrating from sandbox to portal in progress.</p>
         </Container>
       </main>
     </div>

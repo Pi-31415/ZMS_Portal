@@ -1,8 +1,13 @@
 import React from 'react';
+import clsx from 'clsx';
+import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 import Navbar from '../components/navbar';
+import Copyright from '../components/copyright';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -86,17 +91,37 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Dashboard() {
   const classes = useStyles();
- 
-
+  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
   return (
     <div className={classes.root}>
       <CssBaseline />
       <Navbar></Navbar>
-      
-      <main className={classes.content}>
+      <main className={classes.content} style={{backgroundColor:'#eee'}}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-          <h1>Dashboard</h1>
+        <Grid container spacing={3}>
+            {/* Chart */}
+            <Grid item xs={12} md={8} lg={6}>
+              <Paper className={fixedHeightPaper}>
+                
+              </Paper>
+            </Grid>
+            {/* Recent Deposits */}
+            <Grid item xs={12} md={4} lg={6}>
+              <Paper className={fixedHeightPaper}>
+                Something can go here
+              </Paper>
+            </Grid>
+            {/* Recent Orders */}
+            <Grid item xs={12}>
+              <Paper className={classes.paper}>
+              Something can go here
+              </Paper>
+            </Grid>
+          </Grid>
+          <Box pt={4}>
+            <Copyright />
+          </Box>
         </Container>
       </main>
     </div>
