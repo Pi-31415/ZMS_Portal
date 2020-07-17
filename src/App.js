@@ -10,6 +10,7 @@ import {
 //Add Pages
 import SignInSide from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import Dashboard from './pages/dashboard';
 
 const App = props => {
   return (
