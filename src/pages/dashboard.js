@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Navbar from '../components/navbar';
 import Copyright from '../components/copyright';
+import Nextlesson from '../components/next_lesson_card';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -85,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
   },
   fixedHeight: {
-    height: 240,
+    height: 200,
   },
 }));
 
@@ -102,9 +103,7 @@ export default function Dashboard() {
         <Grid container spacing={3}>
             {/* Chart */}
             <Grid item xs={12} md={8} lg={6}>
-              <Paper className={fixedHeightPaper}>
-                
-              </Paper>
+                <Nextlesson></Nextlesson>
             </Grid>
             {/* Recent Deposits */}
             <Grid item xs={12} md={4} lg={6}>
