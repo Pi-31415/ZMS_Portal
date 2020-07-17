@@ -11,6 +11,10 @@ import zmslogo from '../img/favicon_source.png';
 import Copyright from '../components/copyright';
 import Typography from '@material-ui/core/Typography';
 import '../scss/custom.scss';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -34,6 +38,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp() {
     const classes = useStyles();
+    const [age, setAge] = React.useState('');
+
+    const handleChange = (event) => {
+        setAge(event.target.value);
+    };
 
     return (
         <Container component="main" maxWidth="xs">
@@ -42,11 +51,21 @@ export default function SignUp() {
                 <img src={zmslogo} align="center" alt="logo" width="100"></img>
                 <form className={classes.form} noValidate>
                     <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6}>
-                            I am a
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            Student
+                        <Grid item xs={12} sm={12}>
+                            <Box mb={3} align="center">
+                            <FormControl className={classes.formControl}  style={{minWidth: 220}}>
+                            <InputLabel id="demo-simple-select-label">I am a</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={age}
+                                    onChange={handleChange}
+                                >
+                                    <MenuItem value={10}>Student</MenuItem>
+                                    <MenuItem value={20}>Teacher</MenuItem>
+                                </Select>
+                                </FormControl>
+                            </Box>
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <TextField
@@ -116,7 +135,7 @@ export default function SignUp() {
                     </Box>
                 </form>
             </div>
-            <Box mt={3} mb={5}>
+            <Box mt={5} mb={10}>
                 <Copyright />
             </Box>
         </Container>
