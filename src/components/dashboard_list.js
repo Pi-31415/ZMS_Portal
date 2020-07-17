@@ -3,18 +3,27 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import DashboardIcon from '@material-ui/icons/Dashboard';
+
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+import { faHome } from '@fortawesome/free-solid-svg-icons'
+import { faCalendar } from '@fortawesome/free-solid-svg-icons'
+
 
 export const mainListItems = (
   <div>
     <ListItem button>
       <ListItemIcon>
-        <FontAwesomeIcon icon={faCoffee} />
+        <FontAwesomeIcon icon={faHome} size='2x'/>
       </ListItemIcon>
-      <ListItemText primary="Dashboard" />
+      <ListItemText primary="Home" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <FontAwesomeIcon icon={faCalendar} size='2x'/>
+      </ListItemIcon>
+      <ListItemText primary="Schedule" />
     </ListItem>
   </div>
 );
