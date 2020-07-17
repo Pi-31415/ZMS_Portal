@@ -42,6 +42,12 @@ export default function SignUp() {
                 <img src={zmslogo} align="center" alt="logo" width="100"></img>
                 <form className={classes.form} noValidate>
                     <Grid container spacing={2}>
+                    <Grid item xs={12} sm={6}>
+                            I am a
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            Student
+                        </Grid>
                         <Grid item xs={12} sm={6}>
                             <TextField
                                 autoComplete="fname"
@@ -110,7 +116,7 @@ export default function SignUp() {
                     </Box>
                 </form>
             </div>
-            <Box mt={5} mb={10}>
+            <Box mt={3} mb={5}>
                 <Copyright />
             </Box>
         </Container>
