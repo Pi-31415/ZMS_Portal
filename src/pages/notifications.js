@@ -96,7 +96,7 @@ export default function Dashboard() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-          <h1>Dashboard</h1>
+          <h1>Notifications</h1>
         </Container>
       </main>
     </div>

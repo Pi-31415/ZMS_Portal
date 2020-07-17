@@ -15,7 +15,7 @@ import Terms from './pages/terms';
 import Privacy from './pages/privacy';
 import Classroom from './pages/classroom';
 import Schedule from './pages/schedule';
-
+import Notifications from './pages/notifications';
 
 const App = props => {
   return (
@@ -26,6 +26,7 @@ const App = props => {
             <Route path="/portal/signup"><SignUp></SignUp></Route>
             <Route path="/portal/dashboard/home"><Dashboard></Dashboard></Route>
             <Route path="/portal/dashboard/schedule"><Schedule></Schedule></Route>
+            <Route path="/portal/dashboard/notif"><Notifications></Notifications></Route>
             <Route path="/portal/terms"><Terms></Terms></Route>
             <Route path="/portal/privacy"><Privacy></Privacy></Route>
             <Route path="/portal/classroom"><Classroom></Classroom></Route>
@@ -43,6 +44,8 @@ const App = props => {
           <Link to="/portal/privacy" style={{color:'#fff'}}>Privacy Policy</Link>
           {' | '} 
           <Link to="/portal/dashboard/home" style={{color:'#fff'}}>Dashboard</Link>
+          {' | '} 
+          <Link to="/portal/dashboard/notif" style={{color:'#fff'}}>Notifications</Link>
           {' | '} 
           <Link to="/portal/dashboard/schedule" style={{color:'#fff'}}>Schedule</Link>
           {' | '} 
