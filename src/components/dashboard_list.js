@@ -8,7 +8,7 @@ import AssignmentIcon from '@material-ui/icons/Assignment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { faHome } from '@fortawesome/free-solid-svg-icons'
-import { faCalendar } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 
 
 export const mainListItems = (
@@ -21,7 +21,7 @@ export const mainListItems = (
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <FontAwesomeIcon icon={faCalendar} size='2x'/>
+        <FontAwesomeIcon icon={faCalendarAlt} size='2x'/>
       </ListItemIcon>
       <ListItemText primary="Schedule" />
     </ListItem>
