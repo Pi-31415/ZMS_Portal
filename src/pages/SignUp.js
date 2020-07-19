@@ -38,10 +38,17 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp() {
     const classes = useStyles();
-    const [age, setAge] = React.useState('');
 
-    const handleChange = (event) => {
-        setAge(event.target.value);
+    const [role, setRole] = React.useState("Student");
+    const [signupusername,setSignupusername] = React.useState("");
+    const [signuppassword,setSignupassword] =  React.useState("");
+    const [firstname,setFirstname] = React.useState("");
+    const [lastname,setLastname] = React.useState("");
+    const [singupemail,setSignupemail]  = React.useState("");
+    const [phone,setPhone]  = React.useState("");
+
+    const handleRoleChange = (event) => {
+        setRole(event.target.value);
     };
 
     return (
@@ -58,14 +65,27 @@ export default function SignUp() {
                                 <Select
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
-                                    value={age}
-                                    onChange={handleChange}
+                                    value={role}
+                                    onChange={handleRoleChange}
                                 >
-                                    <MenuItem value={10}>Student</MenuItem>
-                                    <MenuItem value={20}>Teacher</MenuItem>
+                                    <MenuItem value={"Student"}>Student</MenuItem>
+                                    <MenuItem value={"Teacher"}>Teacher</MenuItem>
                                 </Select>
                                 </FormControl>
                             </Box>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <TextField
+                                variant="outlined"
+                                required
+                                fullWidth
+                                id="username"
+                                onChange={e => setSignupusername(e.target.value)}
+                                label="Username"
+                                name="username"
+                                autoComplete="username"
+                                autoFocus
+                            />
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <TextField
@@ -74,9 +94,9 @@ export default function SignUp() {
                                 variant="outlined"
                                 required
                                 fullWidth
+                                onChange={e => setFirstname(e.target.value)}
                                 id="firstName"
                                 label="First Name"
-                                autoFocus
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
@@ -85,6 +105,7 @@ export default function SignUp() {
                                 required
                                 fullWidth
                                 id="lastName"
+                                onChange={e => setLastname(e.target.value)}
                                 label="Last Name"
                                 name="lastName"
                                 autoComplete="lname"
@@ -96,6 +117,7 @@ export default function SignUp() {
                                 required
                                 fullWidth
                                 id="email"
+                                onChange={e => setSignupemail(e.target.value)}
                                 label="Email Address"
                                 name="email"
                                 autoComplete="email"
@@ -106,8 +128,21 @@ export default function SignUp() {
                                 variant="outlined"
                                 required
                                 fullWidth
+                                id="phone"
+                                onChange={e => setPhone(e.target.value)}
+                                label="Phone"
+                                name="phone"
+                                autoComplete="phone"
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <TextField
+                                variant="outlined"
+                                required
+                                fullWidth
                                 name="password"
                                 label="Password"
+                                onChange={e => setSignupassword(e.target.value)}
                                 type="password"
                                 id="password"
                                 autoComplete="current-password"

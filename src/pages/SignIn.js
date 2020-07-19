@@ -49,14 +49,13 @@ export default function SignInSide() {
   const classes = useStyles();  
   let history = useHistory();
 
-  // Similar to componentDidMount and componentDidUpdate:
+
   useEffect(() => {
-    // Update the document title using the browser API
     console.log(`${auth}`);
-    if(`${auth}` == `success`){
+    if(`${auth}` === `success`){
       document.getElementById("message").innerHTML = `${auth}`;
       history.push("/portal/dashboard/home");
-    }else if(`${auth}` == `notloggedin`){
+    }else if(`${auth}` === `notloggedin`){
       document.getElementById("message").innerHTML = ``;
     }
     else{
