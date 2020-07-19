@@ -55,7 +55,7 @@ export default function SignInSide() {
     if(`${auth}` === `success`){
       document.getElementById("message").innerHTML = `${auth}`;
       history.push("/portal/dashboard/home");
-    }else if(`${auth}` === `notloggedin`){
+    }else if(`${auth}` === `not_logged_in`){
       document.getElementById("message").innerHTML = ``;
     }
     else{
@@ -65,7 +65,7 @@ export default function SignInSide() {
   
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
-   const [auth,setAuth] = useState("notloggedin");
+   const [auth,setAuth] = useState("not_logged_in");
 
    const handleSubmit = (evt) => {
        evt.preventDefault();
@@ -88,7 +88,7 @@ export default function SignInSide() {
         <div className={classes.paper}>
 
           <img src={zmslogo} align="center" alt="logo" width="100"></img>
-          <p id="message"></p>
+          <p style={{color:'red'}} id="message"></p>
           <form className={classes.form} noValidate onSubmit={handleSubmit}>
             <TextField
               variant="outlined"

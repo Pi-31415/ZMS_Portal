@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import { Link } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
@@ -15,6 +16,7 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -38,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp() {
     const classes = useStyles();
+    let history = useHistory();
 
     const [role, setRole] = React.useState("Student");
     const [signupusername,setSignupusername] = React.useState("");
@@ -46,17 +49,51 @@ export default function SignUp() {
     const [lastname,setLastname] = React.useState("");
     const [singupemail,setSignupemail]  = React.useState("");
     const [phone,setPhone]  = React.useState("");
+    const [auth,setAuth] = useState("not_signed_up");
 
     const handleRoleChange = (event) => {
         setRole(event.target.value);
     };
+
+    useEffect(() => {
+        console.log(`${auth}`);
+        if(`${auth}` === `success`){
+          document.getElementById("message").innerHTML = `Account created, please head back to login page for testing purposes.`;
+          //history.push("/portal/dashboard/home");
+        }else if(`${auth}` === `not_signed_up`){
+          document.getElementById("message").innerHTML = ``;
+        }
+        else{
+          document.getElementById("message").innerHTML = `Please check your input again.`;
+        }
+      });
+    
+
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+        const query = {
+            "USERNAME": signupusername,
+            "PASSWORD": signuppassword,
+            "FIRST_NAME": firstname,
+            "LAST_NAME": lastname,
+            "EMAIL": singupemail,
+            "PHONE": phone,
+            "ROLE": role
+         };
+         axios.post('http://zmsedu.com/api/signup', query)
+         .then(response => setAuth(response.data.RESULT))
+         .catch(error => {
+           setAuth("Wrong Username or Password");
+         });
+    }
 
     return (
         <Container component="main" maxWidth="xs">
             <CssBaseline />
             <div className={classes.paper}>
                 <img src={zmslogo} align="center" alt="logo" width="100"></img>
-                <form className={classes.form} noValidate>
+                <p style={{color:'green'}} id="message"></p>
+                <form className={classes.form} onSubmit={handleSubmit} Validate>
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={12}>
                             <Box mb={2} align="center">
