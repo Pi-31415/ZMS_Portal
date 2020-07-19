@@ -80,12 +80,13 @@ export default function SignInSide() {
 
    const handleSubmit = (evt) => {
        evt.preventDefault();
-       const query = `{
+       const query = {
         "USERNAME": "${email}",
         "PASSWORD": "${password}"
-        }`;
-        axios.post('http://zmsedu.com/api/login', query)
-        .then(response => console.log(response.data.RESULT));
+        };
+        console.log(query);
+        /*axios.post('http://zmsedu.com/api/login', query)
+        .then(response => console.log(response.data.RESULT));*/
    }
 
   return (
