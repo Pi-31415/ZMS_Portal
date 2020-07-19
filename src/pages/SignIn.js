@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -51,13 +51,42 @@ export default function SignInSide() {
 
   function handleClick() {
     //history.push("/portal/dashboard/home");
-    const query = {
+    /*const query = {
       "USERNAME": "Pi",
       "PASSWORD": "123456"
       };
     axios.post('http://zmsedu.com/api/login', query)
-        .then(response => console.log(response.data,message));
+        .then(response => console.log(response.data.RESULT));*/
   }
+
+ /* // Similar to componentDidMount and componentDidUpdate:
+  useEffect(() => {
+    // Update the document title using the browser API
+    document.title = `You clicked ${count} times`;
+    document.getElementById("blah").innerHTML = `You clicked ${count} times`;
+  });
+  
+  <div>
+      <p>You clicked {count} times</p>
+      <p id="blah"></p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+    */
+
+   const [email, setEmail] = useState("");
+   const [password, setPassword] = useState("");
+
+   const handleSubmit = (evt) => {
+       evt.preventDefault();
+       const query = `{
+        "USERNAME": "${email}",
+        "PASSWORD": "${password}"
+        }`;
+        axios.post('http://zmsedu.com/api/login', query)
+        .then(response => console.log(response.data.RESULT));
+   }
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -65,17 +94,20 @@ export default function SignInSide() {
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
+
           <img src={zmslogo} align="center" alt="logo" width="100"></img>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} noValidate onSubmit={handleSubmit}>
             <TextField
               variant="outlined"
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              id="username"
+              label="Username"
+              name="u"
+              autoComplete="name"
               autoFocus
             />
             <TextField
@@ -83,6 +115,8 @@ export default function SignInSide() {
               margin="normal"
               required
               fullWidth
+              value={password}
+              onChange={e => setPassword(e.target.value)}
               name="password"
               label="Password"
               type="password"
@@ -90,7 +124,7 @@ export default function SignInSide() {
               autoComplete="current-password"
             />
             <Button
-              onClick={handleClick}
+              type="submit" 
               fullWidth
               variant="contained"
               color="primary"
