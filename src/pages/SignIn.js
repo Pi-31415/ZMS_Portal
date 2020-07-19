@@ -56,7 +56,7 @@ export default function SignInSide() {
       "PASSWORD": "123456"
       };
     axios.post('http://zmsedu.com/api/login', article)
-        .then(response => console.log({ MESSAGE: response.MESSAGE }));
+        .then(response => console.log(response));
   }
 
   return (
