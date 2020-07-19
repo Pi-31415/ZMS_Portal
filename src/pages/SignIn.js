@@ -51,9 +51,12 @@ export default function SignInSide() {
 
   function handleClick() {
     //history.push("/portal/dashboard/home");
-    const article = { title: 'React POST Request Example' };
-    axios.post('https://reqres.in/api/articles', article)
-        .then(response => console.log({ articleId: response.data.id }));
+    const article = {
+      "USERNAME": "Pi",
+      "PASSWORD": "123456"
+      };
+    axios.post('http://zmsedu.com/api/login', article)
+        .then(response => console.log({ MESSAGE: response.MESSAGE }));
   }
 
   return (
