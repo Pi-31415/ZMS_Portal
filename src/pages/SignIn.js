@@ -49,22 +49,13 @@ export default function SignInSide() {
   const classes = useStyles();  
   let history = useHistory();
 
-  function handleClick() {
-    //history.push("/portal/dashboard/home");
-    /*const query = {
-      "USERNAME": "Pi",
-      "PASSWORD": "123456"
-      };
-    axios.post('http://zmsedu.com/api/login', query)
-        .then(response => console.log(response.data.RESULT));*/
-  }
-
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     // Update the document title using the browser API
     console.log(`${auth}`);
     if(`${auth}` == `success`){
       document.getElementById("message").innerHTML = `${auth}`;
+      history.push("/portal/dashboard/home");
     }else if(`${auth}` == `notloggedin`){
       document.getElementById("message").innerHTML = ``;
     }
@@ -84,8 +75,10 @@ export default function SignInSide() {
         "PASSWORD": password
         };
         axios.post('http://zmsedu.com/api/login', query)
-        .then(response => setAuth(response.data.RESULT);
-
+        .then(response => setAuth(response.data.RESULT))
+        .catch(error => {
+          setAuth("Wrong Username or Password");
+        });
    }
 
   return (
