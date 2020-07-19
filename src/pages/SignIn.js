@@ -59,34 +59,32 @@ export default function SignInSide() {
         .then(response => console.log(response.data.RESULT));*/
   }
 
- /* // Similar to componentDidMount and componentDidUpdate:
+  // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     // Update the document title using the browser API
-    document.title = `You clicked ${count} times`;
-    document.getElementById("blah").innerHTML = `You clicked ${count} times`;
+    if(`${auth}` == `success`){
+      document.getElementById("message").innerHTML = `${auth}`;
+    }else if(`${auth}` == `notloggedin`){
+      document.getElementById("message").innerHTML = ``;
+    }
+    else{
+      document.getElementById("message").innerHTML = `Wrong Username or Password`;
+    }
   });
   
-  <div>
-      <p>You clicked {count} times</p>
-      <p id="blah"></p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-    </div>
-    */
-
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
+   const [auth,setAuth] = useState("notloggedin");
 
    const handleSubmit = (evt) => {
        evt.preventDefault();
        const query = {
-        "USERNAME": "${email}",
-        "PASSWORD": "${password}"
+        "USERNAME": email,
+        "PASSWORD": password
         };
         console.log(query);
-        /*axios.post('http://zmsedu.com/api/login', query)
-        .then(response => console.log(response.data.RESULT));*/
+        axios.post('http://zmsedu.com/api/login', query)
+        .then(response => setAuth(response.data.RESULT));
    }
 
   return (
@@ -97,6 +95,7 @@ export default function SignInSide() {
         <div className={classes.paper}>
 
           <img src={zmslogo} align="center" alt="logo" width="100"></img>
+          <p id="message"></p>
           <form className={classes.form} noValidate onSubmit={handleSubmit}>
             <TextField
               variant="outlined"
