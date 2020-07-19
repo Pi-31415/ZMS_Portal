@@ -51,11 +51,11 @@ export default function SignInSide() {
 
   function handleClick() {
     //history.push("/portal/dashboard/home");
-    const article = {
+    const query = {
       "USERNAME": "Pi",
       "PASSWORD": "123456"
       };
-    axios.post('http://zmsedu.com/api/login', article)
+    axios.post('http://zmsedu.com/api/login', query)
         .then(response => console.log(response.data));
   }
 
