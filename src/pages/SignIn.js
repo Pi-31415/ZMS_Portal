@@ -88,7 +88,7 @@ export default function SignInSide() {
         <div className={classes.paper}>
 
           <img src={zmslogo} align="center" alt="logo" width="100"></img>
-          <p style={{color:'red'}} id="message"></p>
+          
           <form className={classes.form} noValidate onSubmit={handleSubmit}>
             <TextField
               variant="outlined"
@@ -116,6 +116,7 @@ export default function SignInSide() {
               id="password"
               autoComplete="current-password"
             />
+            
             <Button
               type="submit" 
               fullWidth
@@ -125,6 +126,11 @@ export default function SignInSide() {
             >
               Log in
             </Button>
+            <Box align="center">
+            <Typography>
+            <p style={{color:'red'}} id="message"></p>
+            </Typography>
+            </Box>
             <Box mt={5} align="center">
               <Typography>
                 <Link to="/portal/signup" className="custom-link">{"Don't have an account? Sign Up"}</Link>
