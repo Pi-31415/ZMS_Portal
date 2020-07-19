@@ -9,6 +9,10 @@ import Paper from '@material-ui/core/Paper';
 import Navbar from '../components/navbar';
 import Copyright from '../components/copyright';
 import Nextlesson from '../components/next_lesson_card';
+import UploadButtons from '../components/fileupload';
+
+
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -108,7 +112,7 @@ export default function Dashboard() {
             {/* Recent Deposits */}
             <Grid item xs={12} md={4} lg={6}>
               <Paper className={fixedHeightPaper}>
-                Something can go here
+                <UploadButtons></UploadButtons>
               </Paper>
             </Grid>
             {/* Recent Orders */}
