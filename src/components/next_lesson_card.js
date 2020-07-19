@@ -25,9 +25,7 @@ export default function Nextlesson() {
       <Card className={classes.root}>
         <CardActionArea>
           <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              <Title>IB Chemistry with Mookie</Title>
-            </Typography>
+            <Title>IB Chemistry with Mookie</Title>
             <Typography component="p" variant="h4">
             <FontAwesomeIcon icon={faFlask} style={{color:'#777'}}/> Electrolysis
             </Typography>

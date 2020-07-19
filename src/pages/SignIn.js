@@ -11,6 +11,7 @@ import zmslogo from '../img/favicon_source.png';
 import Copyright from '../components/copyright';
 import Typography from '@material-ui/core/Typography';
 import '../scss/custom.scss';
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,7 +45,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignInSide() {
-  const classes = useStyles();
+  const classes = useStyles();    
+
+  let history = useHistory();
+
+  function handleClick() {
+    history.push("/portal/dashboard/home");
+  }
+
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
@@ -76,7 +84,7 @@ export default function SignInSide() {
               autoComplete="current-password"
             />
             <Button
-              type="submit"
+              onClick={handleClick}
               fullWidth
               variant="contained"
               color="primary"

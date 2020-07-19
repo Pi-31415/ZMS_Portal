@@ -17,6 +17,8 @@ import Classroom from './pages/classroom';
 import Schedule from './pages/schedule';
 import Notifications from './pages/notifications';
 
+
+
 const App = props => {
   return (
     <Router>
