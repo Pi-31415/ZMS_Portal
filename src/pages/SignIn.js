@@ -62,6 +62,7 @@ export default function SignInSide() {
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     // Update the document title using the browser API
+    console.log(`${auth}`);
     if(`${auth}` == `success`){
       document.getElementById("message").innerHTML = `${auth}`;
     }else if(`${auth}` == `notloggedin`){
@@ -82,9 +83,9 @@ export default function SignInSide() {
         "USERNAME": email,
         "PASSWORD": password
         };
-        console.log(query);
         axios.post('http://zmsedu.com/api/login', query)
-        .then(response => setAuth(response.data.RESULT));
+        .then(response => setAuth(response.data.RESULT);
+
    }
 
   return (
