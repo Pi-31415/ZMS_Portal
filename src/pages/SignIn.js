@@ -12,6 +12,7 @@ import Copyright from '../components/copyright';
 import Typography from '@material-ui/core/Typography';
 import '../scss/custom.scss';
 import { useHistory } from "react-router-dom";
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,12 +46,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignInSide() {
-  const classes = useStyles();    
-
+  const classes = useStyles();  
   let history = useHistory();
 
   function handleClick() {
-    history.push("/portal/dashboard/home");
+    //history.push("/portal/dashboard/home");
+    const article = { title: 'React POST Request Example' };
+    axios.post('https://reqres.in/api/articles', article)
+        .then(response => console.log({ articleId: response.data.id }));
   }
 
   return (
