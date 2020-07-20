@@ -31,6 +31,7 @@ const App = props => {
             <Route path="/portal/privacy"><Privacy></Privacy></Route>
             <Route path="/portal/classroom"><Classroom></Classroom></Route>
             <Route path="/portal"><SignInSide></SignInSide></Route>
+            {/* For Anson only */}
           </Switch>
         </div>
         <div style={{ background: '#009688', padding: '0',margin:'0', color:'#fff' }}>
