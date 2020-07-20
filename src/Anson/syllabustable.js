@@ -24,11 +24,12 @@ const useRowStyles = makeStyles({
   },
 });
 
-function createData1(lesson,topic,status) {
+function createData1(lesson,topic,status,buttonclass) {
   return {
     lesson,
     topic,
     status,
+    buttonclass,
     content: [
       { id: '1', description: 'Overview of analytical tools (audience and purpose, context, tone, stylistic devices, structure)'},
       { id: '1', description: 'How to annotate the text'},
@@ -37,11 +38,12 @@ function createData1(lesson,topic,status) {
   };
 }
 
-function createData2(lesson,topic,status) {
+function createData2(lesson,topic,status,buttonclass) {
     return {
       lesson,
       topic,
       status,
+      buttonclass,
       content: [
         { id: '1', description: 'Outline of the most effective essay structure '},
         { id: '2', description: 'How to write a thesis'},
@@ -50,11 +52,12 @@ function createData2(lesson,topic,status) {
       ],
     };
   }
-  function createData3(lesson,topic,status) {
+  function createData3(lesson,topic,status,buttonclass) {
     return {
       lesson,
       topic,
       status,
+      buttonclass,
       content: [
         { id: '1', description: 'Go over past paper'},
         { id: '2', description: 'How to write effective body paragraphs; transitions between paragraphs'},
@@ -62,11 +65,12 @@ function createData2(lesson,topic,status) {
       ],
     };
   }
-  function createData4(lesson,topic,status) {
+  function createData4(lesson,topic,status,buttonclass) {
     return {
       lesson,
       topic,
       status,
+      buttonclass,
       content: [
         { id: '1', description: 'Go over past paper'},
         { id: '2', description: 'Paper 1 wrap-up: key takeaways and important notes'},
@@ -74,22 +78,24 @@ function createData2(lesson,topic,status) {
       ],
     };
   }
-  function createData5(lesson,topic,status) {
+  function createData5(lesson,topic,status,buttonclass) {
     return {
       lesson,
       topic,
       status,
+      buttonclass,
       content: [
         { id: '1', description: 'Discussion about student’s chosen texts: context, characters'},
         { id: '2', description: 'How to answer the paper 2 question; how to choose a prompt '},
       ],
     };
   }
-  function createData6(lesson,topic,status) {
+  function createData6(lesson,topic,status,buttonclass) {
     return {
       lesson,
       topic,
       status,
+      buttonclass,
       content: [
         { id: '1', description: 'Continued discussion of chosen texts: themes, quotes'},
         { id: '2', description: 'Including important quotes, key themes, characters, context, etc.'},
@@ -97,26 +103,30 @@ function createData2(lesson,topic,status) {
       ],
     };
   }
-  function createData7(lesson,topic,status) {
+  function createData7(lesson,topic,status,buttonclass) {
     return {
       lesson,
       topic,
       status,
+      buttonclass,
       content: [
-        { id: '1', description: ''},
-        { id: '2', description: ''},
-        { id: '3', description: ''},
-        { id: '4', description: ''},
+        { id: '1', description: 'How to write effective introduction, body paragraphs and strong conclusion '},
+        { id: '2', description: 'How to compare + contrast'},
+        { id: '3', description: 'Crafting a thesis '},
+        { id: '4', description: 'HOMEWORK: TIMED paper 2 past paper '},
       ],
     };
   }
-  function createData8(lesson,topic,status) {
+  function createData8(lesson,topic,status,buttonclass) {
     return {
       lesson,
       topic,
       status,
+      buttonclass,
       content: [
-        { id: '1', description: ''},
+        { id: '1', description: 'Go over past paper'},
+        { id: '2', description: 'Review study guide'},
+        { id: '3', description: 'Questions about paper 1, paper 2 or anything else'},
       ],
     };
   }
@@ -138,7 +148,7 @@ function Row(props) {
           {row.lesson}
         </TableCell>
         <TableCell align="left">{row.topic}</TableCell>
-        <TableCell align="center"><Chip label={row.status} /></TableCell>
+        <TableCell align="center"><Chip label={row.status} color={row.buttonclass} /></TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -185,14 +195,14 @@ Row.propTypes = {
 };
 
 const rows = [
-  createData1('Lesson 1','What to look for when reading the texts ', 'incomplete'),
-  createData2('Lesson 2','How to structure your essay', 'incomplete'),
-  createData3('Lesson 3','Writing body paragraphs (analysis)', 'incomplete'),
-  createData4('Lesson 4','Wrap up', 'incomplete'),
-  createData5('Lesson 5','Overview and Understanding the texts ', 'incomplete'),
-  createData6('Lesson 6','Planning and brainstorming: crafting a study guide', 'incomplete'),
-  createData7('Lesson 7','Structuring paper 2 ', 'incomplete'),
-  createData8('Lesson 8','Wrap up ', 'incomplete'),
+  createData1('Lesson 1','What to look for when reading the texts ', 'complete','primary'),
+  createData2('Lesson 2','How to structure your essay', 'incomplete','secondary'),
+  createData3('Lesson 3','Writing body paragraphs (analysis)', 'incomplete','secondary'),
+  createData4('Lesson 4','Wrap up', 'incomplete','secondary'),
+  createData5('Lesson 5','Overview and Understanding the texts ', 'incomplete','secondary'),
+  createData6('Lesson 6','Planning and brainstorming: crafting a study guide', 'incomplete','secondary'),
+  createData7('Lesson 7','Structuring paper 2 ', 'incomplete','secondary'),
+  createData8('Lesson 8','Wrap up ', 'incomplete','secondary'),
 
 ];
 
