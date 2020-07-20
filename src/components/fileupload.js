@@ -27,7 +27,7 @@ export default function UploadButtons() {
     const upload = () => {
         let currentFile = selectedFiles[0];
         const query = {
-            "LESSON_ID": 'SAMPLEID',
+            "LESSON_ID": 'test lesson',
             "FILE": currentFile
             };
             axios.post('http://zmsedu.com/api/student/homework/upload', query)
