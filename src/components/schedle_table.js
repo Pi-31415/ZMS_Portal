@@ -8,6 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Moment from 'react-moment';
+import ScheduleIcon from './schedule_table_icon'
 
 const useStyles = makeStyles({
   table: {
@@ -32,9 +33,10 @@ function addDays(date, days) {
   return copy
 }
 
+
 const rows = [
   createData('Morning', '', '', '', '', '', '', ''),
-  createData('Afternoon', '', '', '', '', '', '', ''),
+  createData('Afternoon', '', '', '', <ScheduleIcon icon="fa fa-plus-circle"></ScheduleIcon>, '', '', ''),
   createData('Evening', '', '', '', '', '', '', ''),
 ];
 
@@ -55,7 +57,7 @@ export default function SimpleTable() {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
         <TableRow style={{backgroundColor:'#9b1c31'}}>
-          <TableCell colspan="7" style={{color:'#fff'}} align="center">This Week</TableCell>
+          <TableCell colSpan="7" style={{color:'#fff'}} align="center">This Week</TableCell>
         </TableRow>
         <TableRow style={{backgroundColor:'#ddd'}}>
             <TableCell style={{color:'#666'}} align="center">Mon<br></br><Moment format="DD">{monday}</Moment></TableCell>

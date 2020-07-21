@@ -64,7 +64,7 @@ export default function SignUp() {
           document.getElementById("message").innerHTML = ``;
         }
         else{
-          document.getElementById("message").innerHTML = `Please check your input again.`;
+          document.getElementById("message").innerHTML = `Please try registering with another email.`;
         }
       });
     
