@@ -162,7 +162,7 @@ function Row(props) {
                 </TableHead>
                 <TableBody>
                   {row.content.map((historyRow) => (
-                    <TableRow key={historyRow.id}>
+                    <TableRow key={historyRow.description}>
                       <TableCell>{historyRow.id}{'. '}{historyRow.description}</TableCell>
                     </TableRow>
                   ))}
