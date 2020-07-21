@@ -1,175 +1,60 @@
 import React from 'react';
-import { Calendar, momentLocalizer } from 'react-big-calendar'
-import moment from 'moment'
+import { makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 
-const localizer = momentLocalizer(moment)
+const useStyles = makeStyles({
+  table: {
+    minWidth: 650,
+  },
+});
 
-export default function Schedule() {
+function createData(name, calories, fat, carbs, protein) {
+  return { name, calories, fat, carbs, protein };
+}
 
-  const myEventsList = [
-    {
-      id: 0,
-      title: 'All Day Event very long title',
-      allDay: true,
-      start: new Date(2015, 3, 0),
-      end: new Date(2015, 3, 1),
-    },
-    {
-      id: 1,
-      title: 'Long Event',
-      start: new Date(2015, 3, 7),
-      end: new Date(2015, 3, 10),
-    },
-  
-    {
-      id: 2,
-      title: 'DTS STARTS',
-      start: new Date(2016, 2, 13, 0, 0, 0),
-      end: new Date(2016, 2, 20, 0, 0, 0),
-    },
-  
-    {
-      id: 3,
-      title: 'DTS ENDS',
-      start: new Date(2016, 10, 6, 0, 0, 0),
-      end: new Date(2016, 10, 13, 0, 0, 0),
-    },
-  
-    {
-      id: 4,
-      title: 'Some Event',
-      start: new Date(2015, 3, 9, 0, 0, 0),
-      end: new Date(2015, 3, 10, 0, 0, 0),
-    },
-    {
-      id: 5,
-      title: 'Conference',
-      start: new Date(2015, 3, 11),
-      end: new Date(2015, 3, 13),
-      desc: 'Big conference for important people',
-    },
-    {
-      id: 6,
-      title: 'Meeting',
-      start: new Date(2015, 3, 12, 10, 30, 0, 0),
-      end: new Date(2015, 3, 12, 12, 30, 0, 0),
-      desc: 'Pre-meeting meeting, to prepare for the meeting',
-    },
-    {
-      id: 7,
-      title: 'Lunch',
-      start: new Date(2015, 3, 12, 12, 0, 0, 0),
-      end: new Date(2015, 3, 12, 13, 0, 0, 0),
-      desc: 'Power lunch',
-    },
-    {
-      id: 8,
-      title: 'Meeting',
-      start: new Date(2015, 3, 12, 14, 0, 0, 0),
-      end: new Date(2015, 3, 12, 15, 0, 0, 0),
-    },
-    {
-      id: 9,
-      title: 'Happy Hour',
-      start: new Date(2015, 3, 12, 17, 0, 0, 0),
-      end: new Date(2015, 3, 12, 17, 30, 0, 0),
-      desc: 'Most important meal of the day',
-    },
-    {
-      id: 10,
-      title: 'Dinner',
-      start: new Date(2015, 3, 12, 20, 0, 0, 0),
-      end: new Date(2015, 3, 12, 21, 0, 0, 0),
-    },
-    {
-      id: 11,
-      title: 'Birthday Party',
-      start: new Date(2015, 3, 13, 7, 0, 0),
-      end: new Date(2015, 3, 13, 10, 30, 0),
-    },
-    {
-      id: 12,
-      title: 'Late Night Event',
-      start: new Date(2015, 3, 17, 19, 30, 0),
-      end: new Date(2015, 3, 18, 2, 0, 0),
-    },
-    {
-      id: 12.5,
-      title: 'Late Same Night Event',
-      start: new Date(2015, 3, 17, 19, 30, 0),
-      end: new Date(2015, 3, 17, 23, 30, 0),
-    },
-    {
-      id: 13,
-      title: 'Multi-day Event',
-      start: new Date(2015, 3, 20, 19, 30, 0),
-      end: new Date(2015, 3, 22, 2, 0, 0),
-    },
-    {
-      id: 14,
-      title: 'Today',
-      start: new Date(new Date().setHours(new Date().getHours() - 3)),
-      end: new Date(new Date().setHours(new Date().getHours() + 3)),
-    },
-    {
-      id: 16,
-      title: 'Video Record',
-      start: new Date(2015, 3, 14, 15, 30, 0),
-      end: new Date(2015, 3, 14, 19, 0, 0),
-    },
-    {
-      id: 17,
-      title: 'Dutch Song Producing',
-      start: new Date(2015, 3, 14, 16, 30, 0),
-      end: new Date(2015, 3, 14, 20, 0, 0),
-    },
-    {
-      id: 18,
-      title: 'Itaewon Halloween Meeting',
-      start: new Date(2015, 3, 14, 16, 30, 0),
-      end: new Date(2015, 3, 14, 17, 30, 0),
-    },
-    {
-      id: 19,
-      title: 'Online Coding Test',
-      start: new Date(2015, 3, 14, 17, 30, 0),
-      end: new Date(2015, 3, 14, 20, 30, 0),
-    },
-    {
-      id: 20,
-      title: 'An overlapped Event',
-      start: new Date(2015, 3, 14, 17, 0, 0),
-      end: new Date(2015, 3, 14, 18, 30, 0),
-    },
-    {
-      id: 21,
-      title: 'Phone Interview',
-      start: new Date(2015, 3, 14, 17, 0, 0),
-      end: new Date(2015, 3, 14, 18, 30, 0),
-    },
-    {
-      id: 22,
-      title: 'Cooking Class',
-      start: new Date(2015, 3, 14, 17, 30, 0),
-      end: new Date(2015, 3, 14, 19, 0, 0),
-    },
-    {
-      id: 23,
-      title: 'Go to the gym',
-      start: new Date(2015, 3, 14, 18, 30, 0),
-      end: new Date(2015, 3, 14, 20, 0, 0),
-    },
-  ]
+const rows = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+export default function SimpleTable() {
+  const classes = useStyles();
 
   return (
-    <div>
-    <Calendar
-      localizer={localizer}
-      events={myEventsList}
-      startAccessor="start"
-      endAccessor="end"
-      style={{ height: 500 }}
-    />
-  </div>
+    <TableContainer component={Paper}>
+      <Table className={classes.table} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Dessert (100g serving)</TableCell>
+            <TableCell align="right">Calories</TableCell>
+            <TableCell align="right">Fat&nbsp;(g)</TableCell>
+            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
+            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow key={row.name}>
+              <TableCell component="th" scope="row">
+                {row.name}
+              </TableCell>
+              <TableCell align="right">{row.calories}</TableCell>
+              <TableCell align="right">{row.fat}</TableCell>
+              <TableCell align="right">{row.carbs}</TableCell>
+              <TableCell align="right">{row.protein}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 }

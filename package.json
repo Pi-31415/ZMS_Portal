@@ -17,6 +17,7 @@
 		"@material-ui/icons": "^4.9.1",
 		"axios": "^0.19.2",
 		"clsx": "latest",
+		"dayz": "^2.9.0",
 		"material-ui-dropzone": "^3.3.0",
 		"moment": "^2.27.0",
 		"node-sass": "^4.14.1",
