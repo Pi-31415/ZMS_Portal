@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -12,16 +12,20 @@ import { faBook } from '@fortawesome/free-solid-svg-icons';
 import {faUserGraduate} from '@fortawesome/free-solid-svg-icons';
 import {faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
 import Avatar from '@material-ui/core/Avatar';
+import Avatarimage from '../img/avatar.png';
 
 
 export const mainListItems = (
+  
+  const [username, setUsername] = useState(localStorage.getItem("Username"));
+
   <div>
   
   <ListItem>
         <ListItemIcon>
-        <Avatar alt={localStorage.getItem("Username")} src="/static/images/avatar/1.jpg" />
+        <Avatar alt={username} src={Avatarimage} />
         </ListItemIcon>
-        <ListItemText primary={localStorage.getItem("Username")} />
+        <ListItemText primary={username} />
     </ListItem>
     <Link to="/portal/dashboard/home" className="custom-link-normal">
     <ListItem button>
