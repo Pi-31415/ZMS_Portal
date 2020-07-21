@@ -62,11 +62,7 @@ const App = props => {
           {' | '}
           <Link to="/portal/syllabus/anson" style={{ color: '#fff' }}>Syllabus(A)</Link>
         </div>
-       
         */}
-
-        
-
       </div>
     </Router>
   );
