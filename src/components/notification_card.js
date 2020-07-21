@@ -28,7 +28,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function NotifCard() {
+export default function NotifCard(props) {
   const classes = useStyles();
 
   return (
@@ -36,10 +36,10 @@ export default function NotifCard() {
     <Card className={classes.root}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-          10:20 p.m.
+          {props.time}
         </Typography>
         <Typography variant="body2" component="p">
-        <FontAwesomeIcon icon={faBook}/><b> IB English Language and Literature SL :</b> Welcome to the class.
+        <FontAwesomeIcon icon={faBook}/><b> {props.subject} :</b> {props.message}
         </Typography>
       </CardContent>
       {/*
