@@ -29,7 +29,7 @@ export default function IconSelector(props) {
 
     return (
         <div className={classes.root}>
-            <Icon className={props.iconname} style={{ fontSize: 20 }} />
+            <Icon className={props.iconname} style={{ fontSize: 40 ,color:'#307abb'}} />
         </div>
     );
 }

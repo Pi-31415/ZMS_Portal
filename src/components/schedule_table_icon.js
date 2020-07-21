@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
 import Icon from '@material-ui/core/Icon';
 import IconSelector from './subject_icon_selector';
+import Chip from '@material-ui/core/Chip';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,7 +32,8 @@ export default function ScheduleIcon(props) {
   return (
     <div className={classes.root}>
       <IconSelector iconname={props.icon}></IconSelector>
-      
+      <Chip label={props.subject} />
+      <p>{props.time}</p>
     </div>
   );
 }

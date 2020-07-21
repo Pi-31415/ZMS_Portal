@@ -195,7 +195,7 @@ Row.propTypes = {
 };
 
 const rows = [
-  createData1('Lesson 1','What to look for when reading the texts ', 'complete','primary'),
+  createData1('Lesson 1','What to look for when reading the texts ', 'incomplete','secondary'),
   createData2('Lesson 2','How to structure your essay', 'incomplete','secondary'),
   createData3('Lesson 3','Writing body paragraphs (analysis)', 'incomplete','secondary'),
   createData4('Lesson 4','Wrap up', 'incomplete','secondary'),
