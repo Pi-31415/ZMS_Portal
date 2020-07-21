@@ -129,8 +129,7 @@ export default function SignInSide() {
               Log in
             </Button>
             <Box align="center">
-            <Typography>
-            <p style={{color:'red'}} id="message"></p>
+            <Typography style={{color:'red'}} id="message">
             </Typography>
             </Box>
             <Box mt={5} align="center">

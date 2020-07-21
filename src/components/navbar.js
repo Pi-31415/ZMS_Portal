@@ -7,12 +7,10 @@ import Badge from '@material-ui/core/Badge';
 import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Drawer from '@material-ui/core/Drawer';
-import Divider from '@material-ui/core/Divider';
-import List from '@material-ui/core/List';
 import IconButton from '@material-ui/core/IconButton';
 import clsx from 'clsx';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import { mainListItems, secondaryListItems,logoutListItems } from '../components/dashboard_list';
+import DashboardList from '../components/dashboard_list';
 import '../scss/custom.scss';
 import { Link } from 'react-router-dom';
 
@@ -142,12 +140,8 @@ export default function Navbar() {
                     <ChevronLeftIcon />
                 </IconButton>
             </div>
-            <Divider />
-            <List>{mainListItems}</List>
-            <Divider />
-            <List>{secondaryListItems}</List>
-            <Divider />
-            <List>{logoutListItems}</List>
+            <DashboardList></DashboardList>
+            
         </Drawer></>
     );
 }
