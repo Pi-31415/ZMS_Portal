@@ -7,6 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Moment from 'react-moment';
 
 const useStyles = makeStyles({
   table: {
@@ -14,14 +15,14 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+function createData(name , mon, tue, wed, thur, fri, sat, sun) {
+  return {name , mon, tue, wed, thur, fri, sat, sun};
 }
 
 const rows = [
-  createData('Morning', 159, 6.0, 24, 4.0),
-  createData('Afternoon', 237, 9.0, 37, 4.3),
-  createData('Evening', 262, 16.0, 24, 6.0),
+  createData('Morning', '', '', '', '', '', '', ''),
+  createData('Afternoon', '', '', '', '', '', '', ''),
+  createData('Evening', '', '', '', '', '', '', ''),
 ];
 
 export default function SimpleTable() {
@@ -32,23 +33,27 @@ export default function SimpleTable() {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell align="center">Time</TableCell>
+            <TableCell align="center">Date</TableCell>
+            <TableCell align="center">Date</TableCell>
+            <TableCell align="center">Date</TableCell>
+            <TableCell align="center">Date</TableCell>
+            <TableCell align="center">Date</TableCell>
+            <TableCell align="center">Date</TableCell>
+            <TableCell align="center">Date</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="center">{row.name}</TableCell>
+              <TableCell align="center">{row.mon}</TableCell>
+              <TableCell align="center">{row.tue}</TableCell>
+              <TableCell align="center">{row.wed}</TableCell>
+              <TableCell align="center">{row.thur}</TableCell>
+              <TableCell align="center">{row.fri}</TableCell>
+              <TableCell align="center">{row.sat}</TableCell>
+              <TableCell align="center">{row.sun}</TableCell>
             </TableRow>
           ))}
         </TableBody>
