@@ -95,7 +95,7 @@ export default function Dashboard() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <h1>Notifications</h1>
-          <NotifCard subject="IB English Language & Literature" time="10:20 a.m." message="Welcome to the class."></NotifCard>
+          <NotifCard subject="IB English Language & Literature" time="10:30 a.m." message="Welcome to the class."></NotifCard>
         </Container>
       </main>
     </div>
