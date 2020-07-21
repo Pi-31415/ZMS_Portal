@@ -9,9 +9,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 import { faBook } from '@fortawesome/free-solid-svg-icons'
+import Avatar from '@material-ui/core/Avatar';
 
 export const mainListItems = (
   <div>
+  
+  <ListItem button>
+        <ListItemIcon>
+        <Avatar alt={localStorage.getItem("Username")} src="/static/images/avatar/1.jpg" />
+        </ListItemIcon>
+        <ListItemText primary={localStorage.getItem("Username")} />
+    </ListItem>
     <Link to="/portal/dashboard/home" className="custom-link-normal">
     <ListItem button>
         <ListItemIcon>
@@ -33,7 +41,12 @@ export const mainListItems = (
 
 export const secondaryListItems = (
   <div>
-    <ListSubheader inset>My Classes</ListSubheader>
+    <ListItem button>
+      <ListItemIcon>
+        <FontAwesomeIcon icon={faBook} size='2x' />
+      </ListItemIcon>
+      <ListItemText primary="My Classes" style={{color:'#9b1c31'}}/>
+    </ListItem>
     <ListItem button>
       <ListItemIcon>
         <FontAwesomeIcon icon={faBook} size='2x' />
