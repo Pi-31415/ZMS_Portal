@@ -96,8 +96,6 @@ export default function Dashboard() {
         <Container maxWidth="lg" className={classes.container}>
           <h1>Notifications</h1>
           <NotifCard></NotifCard>
-          <NotifCard></NotifCard>
-          <NotifCard></NotifCard>
         </Container>
       </main>
     </div>
