@@ -41,6 +41,7 @@ const App = props => {
         </div>
 
      
+       {/*
         <div style={{ background: '#009688', padding: '0', margin: '0', color: '#fff' }}>
           <b>(Development Mode) Completed Pages : </b>
           <Link to="/portal" style={{ color: '#fff' }}>Log In</Link>
@@ -61,6 +62,8 @@ const App = props => {
           {' | '}
           <Link to="/portal/syllabus/anson" style={{ color: '#fff' }}>Syllabus(A)</Link>
         </div>
+       
+        */}
 
         
 
