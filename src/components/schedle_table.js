@@ -26,7 +26,11 @@ const rows = [
 ];
 
 export default function SimpleTable() {
+
   const classes = useStyles();
+
+  var today = new Date(),
+        date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
   return (
     <TableContainer component={Paper}>
@@ -34,7 +38,7 @@ export default function SimpleTable() {
         <TableHead>
           <TableRow>
             <TableCell align="center">Time</TableCell>
-            <TableCell align="center">Date</TableCell>
+            <TableCell align="center"><Moment format="DD MMMM">{date}</Moment></TableCell>
             <TableCell align="center">Date</TableCell>
             <TableCell align="center">Date</TableCell>
             <TableCell align="center">Date</TableCell>
