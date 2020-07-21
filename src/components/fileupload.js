@@ -30,7 +30,7 @@ export default function UploadButtons() {
             "LESSON_ID": 'test lesson',
             "FILE": currentFile
             };
-            axios.post('http://zmsedu.com/api/student/homework/upload', query)
+            axios.post('https://zmsedu.com/api/student/homework/upload', query)
             .then(response => console.log(response.data))
             .catch(error => {
               console.log(error);
