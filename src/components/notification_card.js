@@ -6,7 +6,6 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFlask } from '@fortawesome/free-solid-svg-icons';
 import Box from '@material-ui/core/Box';
 import {faBook} from '@fortawesome/free-solid-svg-icons';
 
@@ -40,12 +39,14 @@ export default function NotifCard() {
           10:20 p.m.
         </Typography>
         <Typography variant="body2" component="p">
-        <FontAwesomeIcon icon={faFlask}/><b> IB English Language and Literature SL :</b> Welcome to the class.
+        <FontAwesomeIcon icon={faBook}/><b> IB English Language and Literature SL :</b> Welcome to the class.
         </Typography>
       </CardContent>
+      {/*
       <CardActions>
         <Button size="small">View</Button>
       </CardActions>
+      */}
     </Card>
     </Box>
   );

@@ -8,8 +8,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFlask } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import {faBook} from '@fortawesome/free-solid-svg-icons';
 import '../scss/custom.scss';
 
 const useStyles = makeStyles({
@@ -25,11 +25,14 @@ export default function Nextlesson() {
       <Card className={classes.root}>
         <CardActionArea>
           <CardContent>
-            <Title>IB Chemistry with Mookie</Title>
+            <Title>IB English Lang & Lit with Lauren</Title>
             <Typography component="p" variant="h4">
-            <FontAwesomeIcon icon={faFlask} style={{color:'#777'}}/> Electrolysis
+            <FontAwesomeIcon icon={faBook} style={{color:'#777'}}/> Lesson 1
             </Typography>
             <Typography color="textSecondary" className={classes.depositContext}>
+            What to look for when reading the texts
+            </Typography>
+            <Typography color="textPrimary" className={classes.depositContext}>
               6 July 2020 (Monday) - 12:30 p.m. HKT
             </Typography>
           </CardContent>
@@ -38,9 +41,7 @@ export default function Nextlesson() {
           <Button size="large" color="primary">
           <Link to="/portal/classroom" className="custom-btn-link"> Go to class</Link>
         </Button>
-          <Button size="large" color="primary">
-            Make a request
-        </Button>
+          {/* */}
         </CardActions>
       </Card>
 
