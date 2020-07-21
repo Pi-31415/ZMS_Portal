@@ -94,8 +94,7 @@ export default function Dashboard() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-          <h1>Schedule</h1>
-          <p>Migrating from sandbox to portal in progress.</p>
+          <h1>Schedule for this week</h1>
           <ScheduleTable></ScheduleTable>
         </Container>
       </main>
