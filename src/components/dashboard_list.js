@@ -13,16 +13,15 @@ import {faUserGraduate} from '@fortawesome/free-solid-svg-icons';
 import {faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
 import Avatar from '@material-ui/core/Avatar';
 
-const username_display = localStorage.getItem("Username");
 
 export const mainListItems = (
   <div>
   
   <ListItem>
         <ListItemIcon>
-        <Avatar alt={username_display} src="/static/images/avatar/1.jpg" />
+        <Avatar alt={localStorage.getItem("Username")} src="/static/images/avatar/1.jpg" />
         </ListItemIcon>
-        <ListItemText primary={username_display} />
+        <ListItemText primary={localStorage.getItem("Username")} />
     </ListItem>
     <Link to="/portal/dashboard/home" className="custom-link-normal">
     <ListItem button>
