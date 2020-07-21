@@ -8,8 +8,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
-import { faAtom } from '@fortawesome/free-solid-svg-icons'
-import { faFlask } from '@fortawesome/free-solid-svg-icons'
+import { faBook } from '@fortawesome/free-solid-svg-icons'
 
 export const mainListItems = (
   <div>
@@ -37,15 +36,9 @@ export const secondaryListItems = (
     <ListSubheader inset>My Classes</ListSubheader>
     <ListItem button>
       <ListItemIcon>
-        <FontAwesomeIcon icon={faAtom} size='2x' />
+        <FontAwesomeIcon icon={faBook} size='2x' />
       </ListItemIcon>
-      <ListItemText primary="IB Physics" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <FontAwesomeIcon icon={faFlask} size='2x' />
-      </ListItemIcon>
-      <ListItemText primary="IB Chemistry" />
+      <ListItemText primary="IB English" />
     </ListItem>
   </div>
 );
