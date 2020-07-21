@@ -51,12 +51,14 @@ export const secondaryListItems = (
       </ListItemIcon>
       <ListItemText primary="My Classes" style={{color:'#9b1c31'}}/>
     </ListItem>
+    <Link to="/portal/syllabus/anson" className="custom-link-normal">
     <ListItem button>
       <ListItemIcon>
         <FontAwesomeIcon icon={faBook} size='2x' />
       </ListItemIcon>
       <ListItemText primary="IB English" />
     </ListItem>
+    </Link>
   </div>
 );
 
