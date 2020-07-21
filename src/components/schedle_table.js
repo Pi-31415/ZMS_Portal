@@ -54,14 +54,17 @@ export default function SimpleTable() {
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
-          <TableRow>
-            <TableCell align="center">Mon<br></br><Moment format="DD MMMM">{monday}</Moment></TableCell>
-            <TableCell align="center">Tue<br></br><Moment format="DD MMMM">{tuesday}</Moment></TableCell>
-            <TableCell align="center">Wed<br></br><Moment format="DD MMMM">{wednesday}</Moment></TableCell>
-            <TableCell align="center">Thur<br></br><Moment format="DD MMMM">{thursday}</Moment></TableCell>
-            <TableCell align="center">Fri<br></br><Moment format="DD MMMM">{friday}</Moment></TableCell>
-            <TableCell align="center">Sat<br></br><Moment format="DD MMMM">{saturday}</Moment></TableCell>
-            <TableCell align="center">Sun<br></br><Moment format="DD MMMM">{sunday}</Moment></TableCell>
+        <TableRow style={{backgroundColor:'#9b1c31'}}>
+          <TableCell colspan="7" style={{color:'#fff'}} align="center">This Week</TableCell>
+        </TableRow>
+        <TableRow style={{backgroundColor:'#ddd'}}>
+            <TableCell style={{color:'#666'}} align="center">Mon<br></br><Moment format="DD">{monday}</Moment></TableCell>
+            <TableCell style={{color:'#666'}} align="center">Tue<br></br><Moment format="DD">{tuesday}</Moment></TableCell>
+            <TableCell style={{color:'#666'}} align="center">Wed<br></br><Moment format="DD">{wednesday}</Moment></TableCell>
+            <TableCell style={{color:'#666'}} align="center">Thur<br></br><Moment format="DD">{thursday}</Moment></TableCell>
+            <TableCell style={{color:'#666'}} align="center">Fri<br></br><Moment format="DD">{friday}</Moment></TableCell>
+            <TableCell style={{color:'#666'}} align="center">Sat<br></br><Moment format="DD">{saturday}</Moment></TableCell>
+            <TableCell style={{color:'#666'}} align="center">Sun<br></br><Moment format="DD">{sunday}</Moment></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
