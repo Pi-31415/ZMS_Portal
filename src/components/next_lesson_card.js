@@ -40,9 +40,7 @@ export default function Nextlesson() {
         <CardActions>
           <Button size="large" color="primary">
           {/*<Link to="/portal/classroom" className="custom-btn-link"> Go to class</Link>*/}
-          <Link href="https://zipcall.io/join/zms_chem_ctkw" target="_blank" className="custom-btn-link"> Go to class</Link>
-
-          
+          <a href="https://zipcall.io/join/zms_anson" target="_blank" className="custom-btn-link"> Go to class</a>
         </Button>
           {/* */}
         </CardActions>

@@ -51,6 +51,8 @@ export default function SignInSide() {
 
 
   useEffect(() => {
+    console.log(`${username}`);
+    localStorage.setItem("Username", `${username}`);
     console.log(`${auth}`);
     if(`${auth}` === `success`){
       document.getElementById("message").innerHTML = `${auth}`;
@@ -63,14 +65,14 @@ export default function SignInSide() {
     }
   });
   
-   const [email, setEmail] = useState("");
+   const [username, setUsername] = useState("");
    const [password, setPassword] = useState("");
    const [auth,setAuth] = useState("not_logged_in");
 
    const handleSubmit = (evt) => {
        evt.preventDefault();
        const query = {
-        "USERNAME": email,
+        "USERNAME": username,
         "PASSWORD": password
         };
         axios.post('http://zmsedu.com/api/login', query)
@@ -95,8 +97,8 @@ export default function SignInSide() {
               margin="normal"
               required
               fullWidth
-              value={email}
-              onChange={e => setEmail(e.target.value)}
+              value={username}
+              onChange={e => setUsername(e.target.value)}
               id="username"
               label="Username"
               name="u"
