@@ -111,15 +111,19 @@ export default function Dashboard() {
             </Grid>
             {/* Recent Deposits */}
             <Grid item xs={12} md={4} lg={6}>
+              {/*
               <Paper className={fixedHeightPaper}>
                 
               </Paper>
+               */}
             </Grid>
             {/* Recent Orders */}
             <Grid item xs={12}>
+              {/*
               <Paper className={classes.paper}>
               Something can go here
               </Paper>
+              */}
             </Grid>
           </Grid>
           <Box pt={4}>

@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Navbar from '../components/navbar';
+import ScheduleTable from '../components/schedle_table';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -95,6 +96,7 @@ export default function Dashboard() {
         <Container maxWidth="lg" className={classes.container}>
           <h1>Schedule</h1>
           <p>Migrating from sandbox to portal in progress.</p>
+          <ScheduleTable></ScheduleTable>
         </Container>
       </main>
     </div>
