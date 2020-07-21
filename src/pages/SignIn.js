@@ -75,7 +75,7 @@ export default function SignInSide() {
         "USERNAME": username,
         "PASSWORD": password
         };
-        axios.post('http://zmsedu.com/api/login', query)
+        axios.post('https://zmsedu.com/api/login', query)
         .then(response => setAuth(response.data.RESULT))
         .catch(error => {
           setAuth("Wrong Username or Password");

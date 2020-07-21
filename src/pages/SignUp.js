@@ -80,7 +80,7 @@ export default function SignUp() {
             "PHONE": phone,
             "ROLE": role
          };
-         axios.post('http://zmsedu.com/api/signup', query)
+         axios.post('https://zmsedu.com/api/signup', query)
          .then(response => setAuth(response.data.RESULT))
          .catch(error => {
            setAuth("Wrong Username or Password");
