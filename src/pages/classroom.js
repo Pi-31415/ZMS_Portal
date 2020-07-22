@@ -36,7 +36,7 @@ export default function Classroom() {
                 </Toolbar>
             </AppBar>
             <Toolbar />
-            <iframe style={{ width: '100vw', border: 'none', height: '100vh' }} allow="camera *;microphone *" src="https://zipcall.io/join/zms_anson" title="W3Schools Free Online Web Tutorials">
+            <iframe style={{ width: '100vw', border: 'none', height: 'calc(100vh - 64px)' }} allow="camera *;microphone *" src="https://zipcall.io/join/zms_anson" title="W3Schools Free Online Web Tutorials">
             </iframe>
         </React.Fragment>
     );
