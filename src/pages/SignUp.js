@@ -106,7 +106,7 @@ export default function SignUp() {
                                     onChange={handleRoleChange}
                                 >
                                     <MenuItem value={"Student"}>Student</MenuItem>
-                                    <MenuItem value={"Teacher"}>Teacher</MenuItem>
+                                    <MenuItem value={"Tutor"}>Tutor</MenuItem>
                                 </Select>
                                 </FormControl>
                             </Box>
@@ -183,6 +183,17 @@ export default function SignUp() {
                                 type="password"
                                 id="password"
                                 autoComplete="current-password"
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <TextField
+                                variant="outlined"
+                                required
+                                fullWidth
+                                name="password"
+                                label="Confirm Password"
+                                type="password"
+                                id="password"
                             />
                         </Grid>
                     </Grid>
