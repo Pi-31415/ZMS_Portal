@@ -58,7 +58,7 @@ export default function SignUp() {
     useEffect(() => {
         console.log(`${auth}`);
         if(`${auth}` === `success`){
-          document.getElementById("message").innerHTML = `Account created, please head back to login page for testing purposes.`;
+          document.getElementById("message").innerHTML = `Account successfully created, please head back to log in page and log in.`;
           //history.push("/portal/dashboard/home");
         }else if(`${auth}` === `not_signed_up`){
           document.getElementById("message").innerHTML = ``;
@@ -92,7 +92,6 @@ export default function SignUp() {
             <CssBaseline />
             <div className={classes.paper}>
                 <img src={zmslogo} align="center" alt="logo" width="100"></img>
-                <p style={{color:'green'}} id="message"></p>
                 <form className={classes.form} onSubmit={handleSubmit} Validate>
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={12}>
@@ -201,6 +200,7 @@ export default function SignUp() {
                             By clicking "Sign Up" you agree to <br></br><Link className="custom-link" to="/portal/terms">{"Our Terms"}</Link> and <Link className="custom-link" to="/portal/privacy">{"Privacy Policy"}</Link>
                         </Typography>
                     </Box>
+                    <p style={{color:'green'}} id="message"></p>
                     <Button
                         type="submit"
                         fullWidth
