@@ -95,7 +95,7 @@ export default function AnsonSyllabus() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-          <h1>Syllabus : IB English Language and Literature SL</h1>
+          <h1>Syllabus : IB English Language and Literature HL</h1>
           <p>Lessons 1-4 will be on Paper 1 and Lessons 5-8 will be on Paper 2.</p>
           <SyllabusTable></SyllabusTable>
         </Container>

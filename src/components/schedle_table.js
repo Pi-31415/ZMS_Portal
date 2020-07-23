@@ -36,7 +36,7 @@ function addDays(date, days) {
 
 const rows = [
   createData('Morning', '', '', '', '', '', '', ''),
-  createData('Afternoon', '', '', '', <ScheduleIcon icon="fa fa-book" subject="IB English" time="3:30 p.m."></ScheduleIcon>, '', '', ''),
+  createData('Afternoon', '', '', '', <ScheduleIcon icon="fa fa-book" subject="IB English (completed)" time="3:30 p.m."></ScheduleIcon>, '', '', ''),
   createData('Evening', '', '', '', '', '', '', ''),
 ];
 

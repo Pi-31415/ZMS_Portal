@@ -33,7 +33,7 @@ export default function Nextlesson() {
             What to look for when reading the texts
             </Typography>
             <Typography color="textPrimary" className={classes.depositContext}>
-              23 July 2020 (Thursday) - 3:30 p.m. HKT
+              30th July 2020 3:30 pm HKT
             </Typography>
           </CardContent>
         </CardActionArea>
