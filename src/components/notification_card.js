@@ -39,7 +39,8 @@ export default function NotifCard(props) {
           {props.time}
         </Typography>
         <Typography variant="body2" component="p">
-        <FontAwesomeIcon icon={faBook}/><b> {props.subject} :</b> {props.message}
+        <FontAwesomeIcon icon={faBook}/><b> {props.subject} :</b> {props.message} {' '}
+        <a href={props.link} target="_blank" style={{color:'#9b1c31'}}>{props.link ? 'View':''}</a>
         </Typography>
       </CardContent>
       {/*
