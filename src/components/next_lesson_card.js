@@ -82,7 +82,7 @@ export default function Nextlesson() {
       </React.Fragment>
     );
   }
-  else if (classexists === "success"){
+  else if (classexists === "success") {
     return (
       <React.Fragment>
         <Card className={classes.root}>
