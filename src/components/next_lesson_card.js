@@ -53,6 +53,7 @@ export default function Nextlesson() {
         setCourse(response.data.LESSONS[0].COURSE);
         setTopic(response.data.LESSONS[0].TOPIC);
         setDatetime(response.data.LESSONS[0].START_DATETIME);
+        localStorage.setItem("Zipcalllink", response.data.LESSONS[0].LESSON_LINK);
       })
       .catch(error => {
         setClassexists("fail");
