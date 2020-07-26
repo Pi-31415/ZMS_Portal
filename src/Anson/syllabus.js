@@ -90,7 +90,9 @@ const useStyles = makeStyles((theme) => ({
 
 
 const markdown = `
-# IB Mathematics Internal Assessment  
+# IB Mathematics Internal Assessment 
+
+*** 
 
 **Tutor:** Mookie Chau,* a current IB Mathematics teacher. Graduated fromthe University of Cambridge with an MPhil in Mathematics Education.*
  
@@ -98,7 +100,8 @@ const markdown = `
 - Go through the proposal 
 - How to structure your maths IA?
 - Comment and analyse some sample Maths IA using the assessment criteria 
-- How to collect your data? -How to use excel for graph plotting? 
+- How to collect your data? 
+- How to use excel for graph plotting? 
 - **HOMEWORK:** Data Collection section of Maths IA 
 
 ## Lesson 3: Statistics concepts used in Maths IA 
@@ -129,15 +132,18 @@ const markdown = `
 ## Lesson 7: Organization of Maths IA  
 - How to write an introduction and conclusion?
 - How to do criterions and bibliography? 
-- How can you improve the presentation of your Maths IA? (CriterionA) 
+- How can you improve the presentation of your Maths IA? (Criterion A) 
 - **HOMEWORK:** Introduction and Conclusion section of Maths IA 
 
 ## Lesson 8: Final proofread of commented Maths IA draft 
 
-- How to  improve  your Maths  IA  using comments  by   the  schoolteacher? 
-- Final detailed review of Maths IA (looking for typos, mistype ofmathematical notations etc.) 
+- How to  improve  your Maths  IA  using comments  by   the  school teacher? 
+- Final detailed review of Maths IA (looking for typos, mistype of mathematical notations etc.) 
+
+***
 
 **Notes:** *Since Math IA is a very personal piece of work, the syllabus framework above is for reference   only.   It  is   subject  to   change   depending  on   the   student’s   needs   and progress.*
+
 `
 
 export default function AnsonSyllabus() {
@@ -170,7 +176,7 @@ export default function AnsonSyllabus() {
           <div className={classes.appBarSpacer} />
           <Container maxWidth="lg" className={classes.container}>
             <br />
-            You are on an IA Consultation session.
+            You are on an IA Consultation session. Thus there is no syllabus for now.
             <br /><br />
           </Container>
         </main>
