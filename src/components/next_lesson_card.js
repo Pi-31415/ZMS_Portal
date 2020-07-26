@@ -24,10 +24,12 @@ function formatdate(inputdate) {
   //return inputdate;
   //2020-07-27T03:00:00.000Z
   var res = inputdate.split(".");
-  var utcCutoff = moment.utc(cutoffString, 'YYYYMMDD HH:mm:ss');
-  var displayCutoff = utcCutoff.clone().tz('America/New_York');
+  var moment = require('moment-timezone');
+  var utcCutoff = moment.utc(res[0], '');
+  //moment format 
+  var displayCutoff = utcCutoff.clone().tz('Asia/Hong_Kong');
   //return '1976-04-19T12:59-0500';
-  return res[0];
+  return displayCutoff;
 }
 
 export default function Nextlesson() {
@@ -97,7 +99,7 @@ export default function Nextlesson() {
               {topic}
             </Typography>
             <Typography color="textPrimary" className={classes.depositContext}>
-              <Moment format="dddd, DD MMMM YYYY HH:mm a">
+              <Moment format="dddd, DD MMMM YYYY hh:mm a">
                 {formatdate(datetime)}
               </Moment> HKT
               </Typography>

@@ -21,6 +21,7 @@
 		"fg-loadcss": "^3.1.0",
 		"material-ui-dropzone": "^3.3.0",
 		"moment": "^2.27.0",
+		"moment-timezone": "^0.5.31",
 		"node-sass": "^4.14.1",
 		"react": "latest",
 		"react-big-calendar": "^0.26.0",
