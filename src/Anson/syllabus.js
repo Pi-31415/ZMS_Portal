@@ -90,16 +90,61 @@ const useStyles = makeStyles((theme) => ({
 
 
 const markdown = `
-sadf
-<h1>Syllabus : IB English Language and Literature HL</h1>
-          <p>Lessons 1-4 will be on Paper 1 and Lessons 5-8 will be on Paper 2.</p>
+# IB Mathematics Internal Assessment  
+
+**Tutor:** Mookie Chau,* a current IB Mathematics teacher. Graduated fromthe University of Cambridge with an MPhil in Mathematics Education.*
+ 
+## Lesson 1-2: Review the Maths IA proposal, sample Maths IA and Data Collection 
+- Go through the proposal 
+- How to structure your maths IA?
+- Comment and analyse some sample Maths IA using the assessment criteria 
+- How to collect your data? -How to use excel for graph plotting? 
+- **HOMEWORK:** Data Collection section of Maths IA 
+
+## Lesson 3: Statistics concepts used in Maths IA 
+
+- What statistics concepts should you integrate in your Maths IA?
+- How to apply those statistics concepts in your Maths IA? 
+- How to type those mathematics equations in Microsoft Word?
+- **HOMEWORK:** Calculation section of Maths IA  
+
+## Lesson 4: Use of Technology in Maths IA 
+
+- How to utilize technology in your Maths IA?
+- What tools should you include apart from GDC and Microsoft Excel? 
+- How to use tools to crosscheck and validate the result? 
+- **HOMEWORK:** Technology section of Maths IA  
+
+## Lesson 5: Analysis section of Maths IA 
+- How to analyse the result? 
+- How to show personal engagement? (Criterion C) 
+- **HOMEWORK:** Analysis section of Maths IA  
+
+## Lesson 6: Limitation section of Maths IA
+- What   are   the   limitations   and   weaknesses   of   your   results   andanalysis?  
+- What can be the suggested ‘further investigations’?
+- How to write a critical reflection by providing substantial evidence? (Criterion D) 
+- **HOMEWORK:** Limitation section of Maths IA  
+
+## Lesson 7: Organization of Maths IA  
+- How to write an introduction and conclusion?
+- How to do criterions and bibliography? 
+- How can you improve the presentation of your Maths IA? (CriterionA) 
+- **HOMEWORK:** Introduction and Conclusion section of Maths IA 
+
+## Lesson 8: Final proofread of commented Maths IA draft 
+
+- How to  improve  your Maths  IA  using comments  by   the  schoolteacher? 
+- Final detailed review of Maths IA (looking for typos, mistype ofmathematical notations etc.) 
+
+**Notes:** *Since Math IA is a very personal piece of work, the syllabus framework above is for reference   only.   It  is   subject  to   change   depending  on   the   student’s   needs   and progress.*
 `
 
 export default function AnsonSyllabus() {
   const classes = useStyles();
   const username = localStorage.getItem("UsernameDisplay");
 
-  if (username.includes("Erica") == true) {
+  if (username.includes("Erica") === true) {
     return (
       <div className={classes.root}>
         <CssBaseline />
@@ -116,7 +161,7 @@ export default function AnsonSyllabus() {
     );
   }
 
-  if (username.includes("Shiv") == true) {
+  if (username.includes("Shiv") === true) {
     return (
       <div className={classes.root}>
         <CssBaseline />
