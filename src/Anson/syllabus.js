@@ -3,7 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Navbar from '../components/navbar';
-import SyllabusTable from './syllabustable';
+import ReactMarkdown from "react-markdown";
+
 const drawerWidth = 240;
 
 
@@ -86,20 +87,51 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
+const markdown = `
+sadf
+<h1>Syllabus : IB English Language and Literature HL</h1>
+          <p>Lessons 1-4 will be on Paper 1 and Lessons 5-8 will be on Paper 2.</p>
+`
+
 export default function AnsonSyllabus() {
   const classes = useStyles();
-  return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <Navbar></Navbar>
-      <main className={classes.content}>
-        <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
-          <h1>Syllabus : IB English Language and Literature HL</h1>
-          <p>Lessons 1-4 will be on Paper 1 and Lessons 5-8 will be on Paper 2.</p>
-          <SyllabusTable></SyllabusTable>
-        </Container>
-      </main>
-    </div>
-  );
+  const username = localStorage.getItem("UsernameDisplay");
+
+  if (username.includes("Erica") == true) {
+    return (
+      <div className={classes.root}>
+        <CssBaseline />
+        <Navbar></Navbar>
+        <main className={classes.content}>
+          <div className={classes.appBarSpacer} />
+          <Container maxWidth="lg" className={classes.container}>
+            <br />
+            <ReactMarkdown source={markdown} />
+            <br /><br />
+          </Container>
+        </main>
+      </div>
+    );
+  }
+
+  if (username.includes("Shiv") == true) {
+    return (
+      <div className={classes.root}>
+        <CssBaseline />
+        <Navbar></Navbar>
+        <main className={classes.content}>
+          <div className={classes.appBarSpacer} />
+          <Container maxWidth="lg" className={classes.container}>
+            <br />
+            You are on an IA Consultation session.
+            <br /><br />
+          </Container>
+        </main>
+      </div>
+    );
+  }
+
+
 }
