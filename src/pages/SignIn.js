@@ -53,6 +53,7 @@ export default function SignInSide() {
   useEffect(() => {
     console.log(`${username}`);
     localStorage.setItem("Username", `${username}`);
+    localStorage.setItem("UsernameDisplay","");
     console.log(`${auth}`);
     if(`${auth}` === `success`){
       document.getElementById("message").innerHTML = `${auth}`;

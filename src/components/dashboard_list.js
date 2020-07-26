@@ -29,9 +29,9 @@ export default function DashboardList() {
 
           <ListItem>
             <ListItemIcon>
-              <Avatar alt={localStorage.getItem("Username")} src={Avatarimg} />
+              <Avatar alt={localStorage.getItem("UsernameDisplay")} src={Avatarimg} />
             </ListItemIcon>
-            <ListItemText primary={localStorage.getItem("Username")} />
+            <ListItemText primary={localStorage.getItem("UsernameDisplay")} />
           </ListItem>
           <Link to="/portal/dashboard/home" className="custom-link-normal">
             <ListItem button>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Title from './title';
 import Card from '@material-ui/core/Card';
@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom';
 import {faBook} from '@fortawesome/free-solid-svg-icons';
 import '../scss/custom.scss';
+import axios from "axios";
 
 const useStyles = makeStyles({
   depositContext: {
@@ -19,18 +20,39 @@ const useStyles = makeStyles({
 });
 
 export default function Nextlesson() {
+  const username = localStorage.getItem("Username");
+  
+  const [teacher, setTeacher] = useState("");
+  const [course,setCourse] = useState("");
+
+  useEffect(() => {
+    const query = {
+      "USERNAME": username
+   };
+   axios.post('https://zmsedu.com/api/get_lessons', query)
+   .then(function(response){
+    localStorage.setItem("UsernameDisplay",response.data.LESSONS[0].STUDENT);
+    setTeacher(response.data.LESSONS[0].TEACHER);
+    setCourse(response.data.LESSONS[0].COURSE);
+    setCourse(response.data.LESSONS[0].COURSE);
+   } )
+   .catch(error => {
+     console.log(error)
+   });
+  });
+
   const classes = useStyles();
   return (
     <React.Fragment>
       <Card className={classes.root}>
         <CardActionArea>
           <CardContent>
-            <Title>IB English Lang & Lit with Lauren</Title>
+            <Title>IB English Lang & Lit with {teacher}</Title>
             <Typography component="p" variant="h4">
-            <FontAwesomeIcon icon={faBook} style={{color:'#777'}}/> Lesson 1
+            <FontAwesomeIcon icon={faBook} style={{color:'#777'}}/> {username}
             </Typography>
             <Typography color="textSecondary" className={classes.depositContext}>
-            What to look for when reading the texts
+            asdfsadf
             </Typography>
             <Typography color="textPrimary" className={classes.depositContext}>
               30th July 2020 3:30 pm HKT
