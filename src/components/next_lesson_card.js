@@ -22,7 +22,11 @@ const useStyles = makeStyles({
 
 function formatdate(inputdate){
     //return inputdate;
-    return "2020-07-27";
+    //2020-07-27T03:00:00.000Z
+    var res = inputdate.split(".");
+    
+    //return '1976-04-19T12:59-0500';
+    return res[0];
 }
 
 export default function Nextlesson() {
@@ -64,7 +68,9 @@ export default function Nextlesson() {
             {topic}
             </Typography>
             <Typography color="textPrimary" className={classes.depositContext}>
-            <Moment format="DD">{formatdate(datetime)} </Moment>30th July 2020 3:30 pm HKT
+            <Moment format="dddd, DD MMMM YYYY HH:mm a">
+                {formatdate(datetime)}
+            </Moment> HKT
             </Typography>
           </CardContent>
         </CardActionArea>
