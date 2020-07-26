@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import {faBook} from '@fortawesome/free-solid-svg-icons';
 import '../scss/custom.scss';
 import axios from "axios";
+import Moment from 'react-moment';
 
 const useStyles = makeStyles({
   depositContext: {
@@ -19,11 +20,18 @@ const useStyles = makeStyles({
   },
 });
 
+function formatdate(inputdate){
+    //return inputdate;
+    return "2020-07-27";
+}
+
 export default function Nextlesson() {
   const username = localStorage.getItem("Username");
   
   const [teacher, setTeacher] = useState("");
   const [course,setCourse] = useState("");
+  const [topic,setTopic] = useState("");
+  const [datetime,setDatetime] = useState("");
 
   useEffect(() => {
     const query = {
@@ -34,7 +42,8 @@ export default function Nextlesson() {
     localStorage.setItem("UsernameDisplay",response.data.LESSONS[0].STUDENT);
     setTeacher(response.data.LESSONS[0].TEACHER);
     setCourse(response.data.LESSONS[0].COURSE);
-    setCourse(response.data.LESSONS[0].COURSE);
+    setTopic(response.data.LESSONS[0].TOPIC);
+    setDatetime(response.data.LESSONS[0].START_DATETIME);
    } )
    .catch(error => {
      console.log(error)
@@ -47,15 +56,15 @@ export default function Nextlesson() {
       <Card className={classes.root}>
         <CardActionArea>
           <CardContent>
-            <Title>IB English Lang & Lit with {teacher}</Title>
+            <Title>{course}{" with "}{teacher}</Title>
             <Typography component="p" variant="h4">
-            <FontAwesomeIcon icon={faBook} style={{color:'#777'}}/> {username}
+            <FontAwesomeIcon icon={faBook} style={{color:'#777'}}/> {course}
             </Typography>
             <Typography color="textSecondary" className={classes.depositContext}>
-            asdfsadf
+            {topic}
             </Typography>
             <Typography color="textPrimary" className={classes.depositContext}>
-              30th July 2020 3:30 pm HKT
+            <Moment format="DD">{formatdate(datetime)} </Moment>30th July 2020 3:30 pm HKT
             </Typography>
           </CardContent>
         </CardActionArea>
