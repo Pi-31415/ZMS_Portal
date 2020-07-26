@@ -55,34 +55,52 @@ export default function Nextlesson() {
   });
 
   const classes = useStyles();
-  return (
-    <React.Fragment>
-      <Card className={classes.root}>
-        <CardActionArea>
-          <CardContent>
-            <Title>{course}{" with "}{teacher}</Title>
-            <Typography component="p" variant="h4">
-            <FontAwesomeIcon icon={faBook} style={{color:'#777'}}/> {course}
+  if(teacher===""){
+    return(
+      <React.Fragment>
+        <Card className={classes.root}>
+          <CardActionArea>
+            <CardContent>
+            <Typography>
+            You have no classes for now.
             </Typography>
-            <Typography color="textSecondary" className={classes.depositContext}>
-            {topic}
-            </Typography>
-            <Typography color="textPrimary" className={classes.depositContext}>
-            <Moment format="dddd, DD MMMM YYYY HH:mm a">
-                {formatdate(datetime)}
-            </Moment> HKT
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button size="large" color="primary">
-          <Link to="/portal/classroom" className="custom-btn-link"> Go to class</Link>
-          {/*<a href="https://zipcall.io/join/zms_anson" target="_blank" className="custom-btn-link"> Go to class</a>*/}
-        </Button>
-          {/* */}
-        </CardActions>
-      </Card>
-
-    </React.Fragment>
-  );
+            </CardContent>
+          </CardActionArea>
+        </Card>
+      </React.Fragment>
+    );
+  }
+  else{
+    return (
+      <React.Fragment>
+        <Card className={classes.root}>
+          <CardActionArea>
+            <CardContent>
+              <Title>{course}{" with "}{teacher}</Title>
+              <Typography component="p" variant="h4">
+              <FontAwesomeIcon icon={faBook} style={{color:'#777'}}/> {course}
+              </Typography>
+              <Typography color="textSecondary" className={classes.depositContext}>
+              {topic}
+              </Typography>
+              <Typography color="textPrimary" className={classes.depositContext}>
+              <Moment format="dddd, DD MMMM YYYY HH:mm a">
+                  {formatdate(datetime)}
+              </Moment> HKT
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <Button size="large" color="primary">
+            <Link to="/portal/classroom" className="custom-btn-link"> Go to class</Link>
+            {/*<a href="https://zipcall.io/join/zms_anson" target="_blank" className="custom-btn-link"> Go to class</a>*/}
+          </Button>
+            {/* */}
+          </CardActions>
+        </Card>
+      </React.Fragment>
+  
+    );
+  }
+  
 }
