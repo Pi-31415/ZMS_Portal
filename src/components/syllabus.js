@@ -182,7 +182,10 @@ export default function AnsonSyllabus() {
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
           <Container maxWidth="lg" className={classes.container}>
-            <br />
+          <Button variant="contained" color="primary">
+              <Link to="/portal/dashboard/home" className="custom-btn-link-white">Back</Link>
+            </Button>
+            <br /><br />
             You are on an IA Consultation session. Thus there is no syllabus for now.
             <br /><br />
           </Container>
