@@ -24,7 +24,8 @@ function formatdate(inputdate) {
   //return inputdate;
   //2020-07-27T03:00:00.000Z
   var res = inputdate.split(".");
-
+  var utcCutoff = moment.utc(cutoffString, 'YYYYMMDD HH:mm:ss');
+  var displayCutoff = utcCutoff.clone().tz('America/New_York');
   //return '1976-04-19T12:59-0500';
   return res[0];
 }
