@@ -121,7 +121,7 @@ export default function Navbar() {
           </Typography>
                 <Link to="/portal/dashboard/notif" style={{ color: '#fff' }}>
                     <IconButton color="inherit">
-                        <Badge badgeContent={3} color="secondary">
+                        <Badge badgeContent={1} color="secondary">
                             <NotificationsIcon />
                         </Badge>
                     </IconButton>

@@ -59,7 +59,7 @@ export default function SignUp() {
         console.log(`${auth}`);
         if(`${auth}` === `success`){
           document.getElementById("message").innerHTML = `Account successfully created, please head back to log in page and log in.`;
-          //history.push("/portal/dashboard/home");
+          history.push("/portal/accountcreated");
         }else if(`${auth}` === `not_signed_up`){
           document.getElementById("message").innerHTML = ``;
         }

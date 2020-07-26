@@ -28,6 +28,7 @@ const App = props => {
             {/*For Anson Only */}
             <Route path="/portal/syllabus/anson"><AnsonSyllabus></AnsonSyllabus></Route>
             {/* For Everything */}
+            <Route path="/portal/accountcreated"><SignUp></SignUp></Route>
             <Route path="/portal/signup"><SignUp></SignUp></Route>
             <Route path="/portal/dashboard/home"><Dashboard></Dashboard></Route>
             <Route path="/portal/dashboard/schedule"><Schedule></Schedule></Route>
