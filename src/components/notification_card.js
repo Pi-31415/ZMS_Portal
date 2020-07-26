@@ -1,13 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Box from '@material-ui/core/Box';
-import {faBook} from '@fortawesome/free-solid-svg-icons';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
 
 const useStyles = makeStyles({
   root: {
@@ -33,22 +31,22 @@ export default function NotifCard(props) {
 
   return (
     <Box mt={1}>
-    <Card className={classes.root}>
-      <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          {props.time}
-        </Typography>
-        <Typography variant="body2" component="p">
-        <FontAwesomeIcon icon={faBook}/><b> {props.subject} :</b> {props.message} {' '}
-        <a href={props.link} target="_blank" style={{color:'#9b1c31'}}>{props.link ? 'View':''}</a>
-        </Typography>
-      </CardContent>
-      {/*
+      <Card className={classes.root}>
+        <CardContent>
+          <Typography className={classes.title} color="textSecondary" gutterBottom>
+            {props.time}
+          </Typography>
+          <Typography variant="body2" component="p">
+            <FontAwesomeIcon icon={faBook} /><b> {props.subject} :</b> {props.message} {' '}
+            <a href={props.link} target="_blank" style={{ color: '#9b1c31' }}>{props.link ? 'View' : ''}</a>
+          </Typography>
+        </CardContent>
+        {/*
       <CardActions>
         <Button size="small">View</Button>
       </CardActions>
       */}
-    </Card>
+      </Card>
     </Box>
   );
 }

@@ -1,8 +1,6 @@
 import React from 'react';
 import { loadCSS } from 'fg-loadcss';
 import { makeStyles } from '@material-ui/core/styles';
-import { green } from '@material-ui/core/colors';
-import Icon from '@material-ui/core/Icon';
 import IconSelector from './subject_icon_selector';
 import Chip from '@material-ui/core/Chip';
 
