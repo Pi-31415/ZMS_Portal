@@ -61,7 +61,7 @@ export default function DashboardList() {
             <ListItemText primary={<b>My Classes</b>} />
           </ListItem>
          
-            <Link to="/portal/syllabus/anson" className="custom-link-normal">
+            <Link to="/portal/dashboard/syllabus" className="custom-link-normal">
 
           <ListItem>
             <ListItemIcon>

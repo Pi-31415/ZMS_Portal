@@ -2,8 +2,11 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
-import Navbar from '../components/navbar';
+import Navbar from './navbar';
 import ReactMarkdown from "react-markdown";
+import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import '../scss/custom.scss';
 
 const drawerWidth = 240;
 
@@ -158,6 +161,9 @@ export default function AnsonSyllabus() {
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
           <Container maxWidth="lg" className={classes.container}>
+            <Button variant="contained" color="primary">
+              <Link to="/portal/dashboard/home" className="custom-btn-link-white">Back</Link>
+            </Button>
             <br />
             <ReactMarkdown source={markdown} />
             <br /><br />
@@ -170,6 +176,7 @@ export default function AnsonSyllabus() {
   if (username.includes("Shiv") === true) {
     return (
       <div className={classes.root}>
+
         <CssBaseline />
         <Navbar></Navbar>
         <main className={classes.content}>
