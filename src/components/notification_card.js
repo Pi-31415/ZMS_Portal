@@ -38,7 +38,7 @@ export default function NotifCard(props) {
           </Typography>
           <Typography variant="body2" component="p">
             <FontAwesomeIcon icon={faBook} /><b> {props.subject} :</b> {props.message} {' '}
-            <a href={props.link} target="_blank" style={{ color: '#9b1c31' }}>{props.link ? 'View' : ''}</a>
+            <a href={props.link} target="_blank" rel="noopener noreferrer"  style={{ color: '#9b1c31' }}>{props.link ? 'View' : ''}</a>
           </Typography>
         </CardContent>
         {/*

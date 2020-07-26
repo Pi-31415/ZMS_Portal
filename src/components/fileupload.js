@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Input from '@material-ui/core/Input';
+
 import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
 export default function UploadButtons() {
     const classes = useStyles();
     const [selectedFiles, setSelectedFiles] = useState(undefined);
-    const [currentFile, setCurrentFile] = useState(undefined);
 
     const selectFile = (event) => {
         setSelectedFiles(event.target.files);
