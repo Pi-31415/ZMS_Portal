@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -34,16 +34,15 @@ function addDays(date, days) {
 }
 
 
-const rows = [
-  createData('Morning', '', '', '', '', '', '', ''),
-  createData('Afternoon', <ScheduleIcon icon="fas fa-square-root-alt" subject="IB Maths" time={localStorage.getItem("tutordate").toString()}></ScheduleIcon>, '', '', '', '', '', ''),
-  createData('Evening', '', '', '', '', '', '', ''),
-];
-
 export default function SimpleTable() {
 
-  const classes = useStyles();
+  const [changetime, setChangetime] = useState("");
 
+  useEffect(() => {
+    setChangetime(localStorage.getItem("tutordate").toString());
+  });
+
+  const classes = useStyles();
   const monday = getMonday(new Date());
   const tuesday = addDays(monday, 1);
   const wednesday = addDays(monday, 2);
@@ -51,6 +50,12 @@ export default function SimpleTable() {
   const friday = addDays(monday, 4);
   const saturday = addDays(monday, 5);
   const sunday = addDays(monday, 6);
+
+  const rows = [
+    createData('Morning', '', '', '', '', '', '', ''),
+    createData('Afternoon', <ScheduleIcon icon="fas fa-square-root-alt" subject="IB Maths" time={changetime}></ScheduleIcon>, '', '', '', '', '', ''),
+    createData('Evening', '', '', '', '', '', '', ''),
+  ];
 
   return (
     <TableContainer component={Paper}>

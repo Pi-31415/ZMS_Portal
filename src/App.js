@@ -17,7 +17,8 @@ import Classroom from './pages/classroom';
 import Schedule from './pages/schedule';
 import Notifications from './pages/notifications';
 //Anson only
-import AnsonSyllabus from './components/syllabus';
+import Syllabus from './components/syllabus';
+import AccountCreated from './pages/accountcreated';
 
 const App = props => {
   return (
@@ -25,13 +26,12 @@ const App = props => {
       <div>
         <div style={{ padding: '0', margin: '0' }}>
           <Switch>
-            
-            <Route path="/portal/accountcreated"><SignUp></SignUp></Route>
             <Route path="/portal/signup"><SignUp></SignUp></Route>
+            <Route path="/portal/accountcreated"><AccountCreated></AccountCreated></Route>
             <Route path="/portal/dashboard/home"><Dashboard></Dashboard></Route>
             <Route path="/portal/dashboard/schedule"><Schedule></Schedule></Route>
             <Route path="/portal/dashboard/notif"><Notifications></Notifications></Route>
-            <Route path="/portal/dashboard/syllabus"><AnsonSyllabus></AnsonSyllabus></Route>
+            <Route path="/portal/dashboard/syllabus"><Syllabus></Syllabus></Route>
             <Route path="/portal/terms"><Terms></Terms></Route>
             <Route path="/portal/privacy"><Privacy></Privacy></Route>
             <Route path="/portal/classroom"><Classroom></Classroom></Route>
