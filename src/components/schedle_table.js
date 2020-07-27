@@ -36,7 +36,7 @@ function addDays(date, days) {
 
 const rows = [
   createData('Morning', '', '', '', '', '', '', ''),
-  createData('Afternoon', <ScheduleIcon icon="fas fa-square-root-alt" subject="IB Maths" time={localStorage.getItem("tutordate")}></ScheduleIcon>, '', '', '', '', '', ''),
+  createData('Afternoon', <ScheduleIcon icon="fas fa-square-root-alt" subject="IB Maths" time={localStorage.getItem("tutordate").toString()}></ScheduleIcon>, '', '', '', '', '', ''),
   createData('Evening', '', '', '', '', '', '', ''),
 ];
 
