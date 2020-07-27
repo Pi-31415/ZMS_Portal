@@ -31,7 +31,19 @@ function formatdate(inputdate) {
 }
 
 export default function Nextlesson() {
-  const username = localStorage.getItem("Username");
+  const username_temporary = localStorage.getItem("Username");
+  var username = "";
+
+  if (username_temporary.includes("erica")) {
+    username = "erica_test";
+    localStorage.setItem("UsernameDisplay", "Erica Valleramos");
+  }
+  else if (username_temporary.includes("shiv")) {
+    username = "shiv_test";
+    localStorage.setItem("UsernameDisplay", "Shiv Bailur");
+  } else {
+    localStorage.setItem("UsernameDisplay", username_temporary);
+  }
 
   const [teacher, setTeacher] = useState("");
   const [course, setCourse] = useState("");
@@ -110,7 +122,7 @@ export default function Nextlesson() {
               {/*<a href="https://zipcall.io/join/zms_anson" target="_blank" className="custom-btn-link"> Go to class</a>*/}
             </Button>
             <Button size="large" color="primary">
-            <Link to="/portal/dashboard/syllabus" className="custom-btn-link">See Syllabus</Link>
+              <Link to="/portal/dashboard/syllabus" className="custom-btn-link">See Syllabus</Link>
             </Button>
             {/* */}
           </CardActions>
