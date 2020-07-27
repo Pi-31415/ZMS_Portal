@@ -31,7 +31,7 @@ function formatdate(inputdate) {
 }
 
 export default function Nextlesson() {
-  const username_temporary = localStorage.getItem("Username");
+  const username_temporary = localStorage.getItem("Username").toLowerCase();
   var username = "";
 
   if (username_temporary.includes("erica")) {

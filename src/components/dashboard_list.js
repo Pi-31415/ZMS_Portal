@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -17,9 +17,10 @@ import Avatarimg from '../img/avatar.png';
 
 
 export default function DashboardList() {
+  const [nametoshow, setNametoshow] = useState("");
 
   useEffect(() => {
-    // code to run on component mount
+    setNametoshow(localStorage.getItem("UsernameDisplay"));
   }, [])
 
   return (
@@ -29,9 +30,9 @@ export default function DashboardList() {
 
           <ListItem>
             <ListItemIcon>
-              <Avatar alt={localStorage.getItem("UsernameDisplay")} src={Avatarimg} />
+              <Avatar alt={nametoshow} src={Avatarimg} />
             </ListItemIcon>
-            <ListItemText primary={localStorage.getItem("UsernameDisplay")} />
+            <ListItemText primary={nametoshow} />
           </ListItem>
           <Link to="/portal/dashboard/home" className="custom-link-normal">
             <ListItem button>
