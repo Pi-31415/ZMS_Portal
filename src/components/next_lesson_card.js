@@ -21,14 +21,13 @@ const useStyles = makeStyles({
 });
 
 function formatdate(inputdate) {
-  //return inputdate;
-  //2020-07-27T03:00:00.000Z
+  //format the time from server and return the Hong Kong Time zone
   var res = inputdate.split(".");
   var moment = require('moment-timezone');
   var utcCutoff = moment.utc(res[0], '');
-  //moment format 
   var displayCutoff = utcCutoff.clone().tz('Asia/Hong_Kong');
-  //return '1976-04-19T12:59-0500';
+  
+  localStorage.setItem("UsernameDisplay", response.data.LESSONS[0].STUDENT);
   return displayCutoff;
 }
 
