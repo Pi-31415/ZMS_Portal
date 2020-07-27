@@ -26,8 +26,7 @@ function formatdate(inputdate) {
   var moment = require('moment-timezone');
   var utcCutoff = moment.utc(res[0], '');
   var displayCutoff = utcCutoff.clone().tz('Asia/Hong_Kong');
-  
-  localStorage.setItem("UsernameDisplay", response.data.LESSONS[0].STUDENT);
+  localStorage.setItem("tutordate", moment(displayCutoff).format('hh:mm a'));
   return displayCutoff;
 }
 
