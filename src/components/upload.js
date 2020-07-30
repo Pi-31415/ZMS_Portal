@@ -1,15 +1,21 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import axios from "axios";
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+//import axios from "axios";
 
 class Upload extends React.Component {
     render() {
         return (
-            <Typography variant="body2" color="textSecondary" align="center">
-                {'Copyright © ZMS Education & Technology '}
-                {new Date().getFullYear()}
-                {'.'}
-            </Typography>
+            <React.Fragment>
+                <Card>
+                    <CardContent align="center">
+                        <Typography variant="body2" color="textSecondary" align="center">
+                            {'Upload'}
+                        </Typography>
+                    </CardContent>
+                </Card>
+            </React.Fragment>
         );
     }
 }

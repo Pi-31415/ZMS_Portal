@@ -40,7 +40,7 @@ export default function SimpleTable() {
 
   useEffect(() => {
     setChangetime(localStorage.getItem("tutordate").toString());
-  });
+  },[]);
 
   const classes = useStyles();
   const monday = getMonday(new Date());
