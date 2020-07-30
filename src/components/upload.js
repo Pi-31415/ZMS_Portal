@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
@@ -10,8 +10,8 @@ export default function Upload() {
     const [lessonid, setLessonid] = React.useState("");
 
     const onChange = (e) => {
-        console.log(e.target.files);
-        setFile(e.target.files);
+        console.log(e.target.files[0]);
+        setFile(e.target.files[0]);
     }
 
     const handleSubmit = (evt) => {
@@ -19,12 +19,12 @@ export default function Upload() {
         const query = {
             "LESSON_ID": "TEST LESSON",
             "FILE": file
-         };
-         axios.post('https://zmsedu.com/api/student/homework/upload', query)
-         .then(response => console.log(response.data.RESULT))
-         .catch(error => {
-           console.log(error)
-         });
+        };
+        axios.post('https://zmsedu.com/api/student/homework/upload', query)
+            .then(response => console.log(response.data.RESULT))
+            .catch(error => {
+                console.log(error)
+            });
     }
 
     return (
