@@ -20,7 +20,7 @@ class FileUpload extends React.Component{
 
     submit(){
         const data = new FormData() 
-        data.append('LESSON_ID', 'TEST ID')
+        data.append('LESSON_ID', '5f1d41ae10365e3c41fdc702')
         data.append('FILE', this.state.selectedFile)
         console.warn(this.state.selectedFile);
         let url = "https://zmsedu.com/api/student/homework/upload";
