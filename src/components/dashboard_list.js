@@ -6,12 +6,12 @@ import '../scss/custom.scss';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
-import { faCalculator } from '@fortawesome/free-solid-svg-icons';
+//import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+//import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
+//import Divider from '@material-ui/core/Divider';
 import Avatarimg from '../img/avatar.png';
 
 
@@ -52,6 +52,18 @@ export default function DashboardList() {
               <ListItemText primary="Schedule" />
             </ListItem>
           </Link>
+
+
+          ---------
+
+          <Divider></Divider>
+      <List>
+        <div>
+
+
+        </div>
+      </List>
+      <Divider></Divider>
   
   */
 
@@ -73,17 +85,9 @@ export default function DashboardList() {
               <ListItemText primary="Home" />
             </ListItem>
           </Link>
-          
         </div>
       </List>
-      <Divider></Divider>
-      <List>
-        <div>
 
-
-        </div>
-      </List>
-      <Divider></Divider>
       <List>
         <div>
           <Link to="/portal/" className="custom-link-normal">

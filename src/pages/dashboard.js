@@ -6,7 +6,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Navbar from '../components/navbar';
 import Copyright from '../components/copyright';
-import Upload from '../components/upload';
+//import Upload from '../components/upload';
 
 
 const drawerWidth = 240;
