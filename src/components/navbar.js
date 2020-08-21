@@ -104,6 +104,15 @@ export default function Navbar() {
     const handleDrawerClose = () => {
         setOpen(false);
     };
+    /*
+    <Link to="/portal/dashboard/notif" style={{ color: '#fff' }}>
+                    <IconButton color="inherit">
+                        <Badge badgeContent={1} color="secondary">
+                            <NotificationsIcon />
+                        </Badge>
+                    </IconButton>
+                </Link>
+    */
     return (<>
         <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
             <Toolbar className={classes.toolbar}>
@@ -118,14 +127,8 @@ export default function Navbar() {
                 </IconButton>
                 <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
                     ZMS Portal
-          </Typography>
-                <Link to="/portal/dashboard/notif" style={{ color: '#fff' }}>
-                    <IconButton color="inherit">
-                        <Badge badgeContent={1} color="secondary">
-                            <NotificationsIcon />
-                        </Badge>
-                    </IconButton>
-                </Link>
+                </Typography>
+
             </Toolbar>
         </AppBar>
         <Drawer
@@ -141,7 +144,7 @@ export default function Navbar() {
                 </IconButton>
             </div>
             <DashboardList></DashboardList>
-            
+
         </Drawer></>
     );
 }

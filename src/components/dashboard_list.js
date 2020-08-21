@@ -20,42 +20,12 @@ export default function DashboardList() {
   const [nametoshow, setNametoshow] = useState("");
 
   useEffect(() => {
-    setNametoshow(localStorage.getItem("UsernameDisplay"));
+    setNametoshow(localStorage.getItem("Username"));
   }, [])
 
-  return (
-    <>
-      <List>
-        <div>
 
-          <ListItem>
-            <ListItemIcon>
-              <Avatar alt={nametoshow} src={Avatarimg} />
-            </ListItemIcon>
-            <ListItemText primary={nametoshow} />
-          </ListItem>
-          <Link to="/portal/dashboard/home" className="custom-link-normal">
-            <ListItem button>
-              <ListItemIcon>
-                <FontAwesomeIcon icon={faHome} size='2x' />
-              </ListItemIcon>
-              <ListItemText primary="Home" />
-            </ListItem>
-          </Link>
-          <Link to="/portal/dashboard/schedule" className="custom-link-normal">
-            <ListItem button>
-              <ListItemIcon>
-                <FontAwesomeIcon icon={faCalendarAlt} size='2x' />
-              </ListItemIcon>
-              <ListItemText primary="Schedule" />
-            </ListItem>
-          </Link>
-        </div>
-      </List>
-      <Divider></Divider>
-      <List>
-        <div>
-          <ListItem>
+  /*
+  <ListItem>
           <ListItemIcon>
             
           </ListItemIcon>
@@ -71,7 +41,46 @@ export default function DashboardList() {
             <ListItemText primary="IB Mathematics" />
           </ListItem>
             </Link>
-      
+
+            ---------
+
+            <Link to="/portal/dashboard/schedule" className="custom-link-normal">
+            <ListItem button>
+              <ListItemIcon>
+                <FontAwesomeIcon icon={faCalendarAlt} size='2x' />
+              </ListItemIcon>
+              <ListItemText primary="Schedule" />
+            </ListItem>
+          </Link>
+  
+  */
+
+  return (
+    <>
+      <List>
+        <div>
+          <ListItem>
+            <ListItemIcon>
+              <Avatar alt={nametoshow} src={Avatarimg} />
+            </ListItemIcon>
+            <ListItemText primary={nametoshow} />
+          </ListItem>
+          <Link to="/portal/dashboard/home" className="custom-link-normal">
+            <ListItem button>
+              <ListItemIcon>
+                <FontAwesomeIcon icon={faHome} size='2x' />
+              </ListItemIcon>
+              <ListItemText primary="Home" />
+            </ListItem>
+          </Link>
+          
+        </div>
+      </List>
+      <Divider></Divider>
+      <List>
+        <div>
+
+
         </div>
       </List>
       <Divider></Divider>
