@@ -5,7 +5,7 @@ import {
   Route,
   
 } from 'react-router-dom';
-
+import SignInSide from './pages/SignIn'
 
 /*
 
@@ -28,7 +28,7 @@ const App = props => {
         <div style={{ padding: '0', margin: '0' }}>
           <Switch>
             
-
+          <Route path="/portal"><SignInSide></SignInSide></Route>
           </Switch>
         </div>
 
