@@ -6,7 +6,6 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Navbar from '../components/navbar';
 import Copyright from '../components/copyright';
-import Nextlesson from '../components/next_lesson_card';
 import Upload from '../components/upload';
 
 
@@ -104,11 +103,11 @@ export default function Dashboard() {
         <Grid container spacing={3}>
             {/* Chart */}
             <Grid item xs={12} md={8} lg={6}>
-                <Nextlesson></Nextlesson>
+                
             </Grid>
             {/* Recent Deposits */}
             <Grid item xs={12} md={4} lg={6}>
-                <Upload></Upload>
+                
             </Grid>
             {/* Recent Orders */}
             <Grid item xs={12}>
