@@ -92,7 +92,7 @@ export default function SignUp() {
             <CssBaseline />
             <div className={classes.paper}>
                 <img src={zmslogo} align="center" alt="logo" width="100"></img>
-                <form className={classes.form} onSubmit={handleSubmit} Validate>
+                <form className={classes.form} onSubmit={handleSubmit} Validate autocomplete="off">
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={12}>
                             <Box mb={2} align="center">
@@ -119,7 +119,7 @@ export default function SignUp() {
                                 onChange={e => setSignupusername(e.target.value)}
                                 label="Username"
                                 name="username"
-                                autoComplete="username"
+                        
                                 autoFocus
                             />
                         </Grid>
@@ -132,7 +132,7 @@ export default function SignUp() {
                                 fullWidth
                                 onChange={e => setFirstname(e.target.value)}
                                 id="firstName"
-                                label="First Name"
+                
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
@@ -144,7 +144,6 @@ export default function SignUp() {
                                 onChange={e => setLastname(e.target.value)}
                                 label="Last Name"
                                 name="lastName"
-                                autoComplete="lname"
                             />
                         </Grid>
                         <Grid item xs={12}>
@@ -156,7 +155,6 @@ export default function SignUp() {
                                 onChange={e => setSignupemail(e.target.value)}
                                 label="Email Address"
                                 name="email"
-                                autoComplete="email"
                             />
                         </Grid>
                         <Grid item xs={12}>
@@ -167,7 +165,6 @@ export default function SignUp() {
                                 onChange={e => setPhone(e.target.value)}
                                 label="Phone"
                                 name="phone"
-                                autoComplete="phone"
                             />
                         </Grid>
                         <Grid item xs={12}>
@@ -180,7 +177,6 @@ export default function SignUp() {
                                 onChange={e => setSignupassword(e.target.value)}
                                 type="password"
                                 id="password"
-                                autoComplete="current-password"
                             />
                         </Grid>
                         <Grid item xs={12}>
