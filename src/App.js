@@ -7,7 +7,10 @@ import {
 } from 'react-router-dom';
 import SignInSide from './pages/SignIn';
 import Dashboard from './pages/dashboard';
-
+import Signup from './pages/SignUp';
+import Terms from './pages/terms';
+import Policy from './pages/privacy';
+import AccountCreated from './pages/accountcreated';
 /*
 
 <Route path="/portal/signup"><SignUp></SignUp></Route>
@@ -29,6 +32,10 @@ const App = props => {
         <div style={{ padding: '0', margin: '0' }}>
           <Switch>
           <Route path="/portal/dashboard/home"><Dashboard></Dashboard></Route>
+          <Route path="/portal/signup"><Signup></Signup></Route>
+          <Route path="/portal/accountcreated"><AccountCreated></AccountCreated></Route>
+          <Route path="/portal/privacy"><Policy></Policy></Route>
+          <Route path="/portal/terms"><Terms></Terms></Route>
           <Route path="/portal"><SignInSide></SignInSide></Route>
           </Switch>
         </div>
