@@ -51,10 +51,10 @@ export default function SignInSide() {
 
 
   useEffect(() => {
-    console.log(`${username}`);
+    //console.log(`${username}`);
     localStorage.setItem("Username", `${username}`);
     localStorage.setItem("UsernameDisplay", "");
-    console.log(`${auth}`);
+    //console.log(`${auth}`);
     if (`${auth}` === `success`) {
       document.getElementById("message").innerHTML = `${auth}`;
       history.push("/portal/dashboard/home");
@@ -80,7 +80,7 @@ export default function SignInSide() {
       .then(response => {
         var result = response.data.RESULT;
         //GET USERS 
-        axios.post('https://zmsedu.com/api/login', query)
+        axios.post('https://zmsedu.com/api/admin/user/get', query)
           .then(response => {
             console.log(response.data.USERS);
             //setAuth();
