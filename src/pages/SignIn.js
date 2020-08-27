@@ -46,45 +46,54 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignInSide() {
-  const classes = useStyles();  
+  const classes = useStyles();
   let history = useHistory();
 
 
   useEffect(() => {
     console.log(`${username}`);
     localStorage.setItem("Username", `${username}`);
-    localStorage.setItem("UsernameDisplay","");
+    localStorage.setItem("UsernameDisplay", "");
     console.log(`${auth}`);
-    if(`${auth}` === `success`){
+    if (`${auth}` === `success`) {
       document.getElementById("message").innerHTML = `${auth}`;
       history.push("/portal/dashboard/home");
-    }else if(`${auth}` === `not_logged_in`){
+    } else if (`${auth}` === `not_logged_in`) {
       document.getElementById("message").innerHTML = ``;
     }
-    else{
+    else {
       document.getElementById("message").innerHTML = `Wrong Username or Password`;
     }
   });
-  
-   const [username, setUsername] = useState("");
-   const [password, setPassword] = useState("");
-   const [auth,setAuth] = useState("not_logged_in");
 
-   const handleSubmit = (evt) => {
-       evt.preventDefault();
-       const query = {
-        "USERNAME": username,
-        "PASSWORD": password
-        };
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [auth, setAuth] = useState("not_logged_in");
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    const query = {
+      "USERNAME": username,
+      "PASSWORD": password
+    };
+    axios.post('https://zmsedu.com/api/login', query)
+      .then(response => {
+        var result = response.data.RESULT;
+        //GET USERS 
         axios.post('https://zmsedu.com/api/login', query)
-        .then(response => {
-          alert("Yes");
-          //setAuth(response.data.RESULT);
-        })
-        .catch(error => {
-          setAuth("Wrong Username or Password");
-        });
-   }
+          .then(response => {
+            console.log(response.data.USERS);
+            //setAuth();
+          }).catch(error => {
+            setAuth("Wrong Username or Password");
+          });
+        
+        
+      })
+      .catch(error => {
+        setAuth("Wrong Username or Password");
+      });
+  }
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -94,7 +103,7 @@ export default function SignInSide() {
         <div className={classes.paper}>
 
           <img src={zmslogo} align="center" alt="logo" width="100"></img>
-          
+
           <form className={classes.form} noValidate onSubmit={handleSubmit}>
             <TextField
               variant="outlined"
@@ -122,9 +131,9 @@ export default function SignInSide() {
               id="password"
               autoComplete="current-password"
             />
-            
+
             <Button
-              type="submit" 
+              type="submit"
               fullWidth
               variant="contained"
               color="primary"
@@ -133,8 +142,8 @@ export default function SignInSide() {
               Log in
             </Button>
             <Box align="center">
-            <Typography style={{color:'red'}} id="message">
-            </Typography>
+              <Typography style={{ color: 'red' }} id="message">
+              </Typography>
             </Box>
             <Box mt={5} align="center">
               <Typography>
