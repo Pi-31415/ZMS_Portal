@@ -52,7 +52,6 @@ export default function SignInSide() {
 
   useEffect(() => {
     //console.log(`${username}`);
-    localStorage.setItem("Username", `${username}`);
     localStorage.setItem("UsernameDisplay", "");
     //console.log(`${auth}`);
     if (`${auth}` === `success`) {
@@ -82,13 +81,17 @@ export default function SignInSide() {
         //GET USERS 
         axios.post('https://zmsedu.com/api/admin/user/get', query)
           .then(response => {
-            console.log(response.data.USERS);
-            //setAuth();
+            for (var i = 0; i < response.data.USERS.length; i++) {
+              if(response.data.USERS[i].USERNAME == username){
+                localStorage.setItem("Username", response.data.USERS[i].FIRST_NAME+" "+response.data.USERS[i].LAST_NAME);
+                setAuth(result);
+              }
+            }
           }).catch(error => {
             setAuth("Wrong Username or Password");
           });
-        
-        
+
+
       })
       .catch(error => {
         setAuth("Wrong Username or Password");
