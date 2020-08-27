@@ -81,10 +81,7 @@ export default function SignUp() {
             "ROLE": role
          };
          axios.post('https://zmsedu.com/api/signup', query)
-         .then(response => {
-             alert("Yeah");
-            //setAuth(response.data.RESULT);
-         })
+         .then(response => setAuth(response.data.RESULT))
          .catch(error => {
            setAuth("Wrong Username or Password");
          });
