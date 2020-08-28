@@ -64,7 +64,7 @@ export default function Example() {
     else {
         button = mycourses.map((course) =>
             <>
-                <Link to="/portal/dashboard/home" className="custom-link-normal">
+                <Link to="/portal/dashboard/syllabus" className="custom-link-normal">
                     <ListItem button>
                         <ListItemIcon>
                         <Smarticon name={course}></Smarticon>
