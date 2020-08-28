@@ -72,15 +72,11 @@ export default function DashboardList() {
   return (
     <>
       <List>
-        <div>
           <ListItem>
             <ListItemIcon>
               <Avatar alt={nametoshow} src={Avatarimg} />
             </ListItemIcon>
-            <ListItemText primary={<b>{nametoshow}</b>} />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary={<i style={{fontSize:'0.8em'}}>{email}</i>} />
+            <ListItemText primary={<div><b>{nametoshow}</b><br/><i style={{fontSize:'0.8em'}}>{email}</i></div>} />
           </ListItem>
           <Divider></Divider>
           <Link to="/portal/dashboard/home" className="custom-link-normal">
@@ -91,12 +87,14 @@ export default function DashboardList() {
               <ListItemText primary="Home" />
             </ListItem>
           </Link>
-        </div>
+          
       </List>
-      <Divider></Divider>
+     
+      <List>
       <ListItem>
         <ListItemText primary={<b>My Courses</b>} />
       </ListItem>
+      </List>
       <Mycourses></Mycourses>
       <Divider></Divider>
       <List>
