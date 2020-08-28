@@ -95,7 +95,7 @@ export default function Dashboard() {
   const { name } = useParams();
   const classes = useStyles();
   const [classname, setClassname] = useState("");
-
+  const [courseid, setCourseid] = useState("");
 
   useEffect(() => {
     setClassname(localStorage.getItem("CurrentSyllabus"));
@@ -103,17 +103,20 @@ export default function Dashboard() {
 
     })
       .then(res => {
+        
         const classes = res.data.CLASS;
-        for (var i = 0; i < classes.length; i++) {
-          //console.log(classes[i].STUDENTS);
-          if (classes[i].CLASS_ID.includes(classname)) {
-            alert(classes[i].COURSE_ID);
+        for(var i=0;i<classes.length;i++){
+          if(classes[i].CLASS_ID == classname){
+            setCourseid(classes[i].COURSE_ID);
           }
         }
+
       }).catch(error => {
         console.log(error);
       });
-  });
+
+
+    });
 
   return (
     <div className={classes.root} style={{ backgroundColor: '#eee' }}>
@@ -129,7 +132,7 @@ export default function Dashboard() {
             </Grid>
             {/* Recent Deposits */}
             <Grid item xs={12} md={4} lg={6}>
-
+              {courseid}
             </Grid>
             {/* Recent Orders */}
             <Grid item xs={12}>
