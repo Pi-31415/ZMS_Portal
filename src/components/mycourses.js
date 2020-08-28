@@ -15,7 +15,7 @@ export default function Example() {
     // Declare a new state variable, which we'll call "count"  
     const [userid, setUserid] = useState("");
     const [mycourses, setMycourses] = useState([]);
-
+    const [loading, setLoading] = useState(true);
     useEffect(() => {    // Update the document title using the browser API  
         setUserid(localStorage.getItem("Userid"));
         //load all information into local storage
@@ -47,10 +47,10 @@ export default function Example() {
                     }
                 }
                 //console.log(enrolledcourseid);
-
                 var set = new Set(enrolledcourses);
                 let array = [...set];
                 setMycourses(array);
+                setLoading(false);
             }).catch(error => {
                 console.log(error);
             });
@@ -62,36 +62,38 @@ export default function Example() {
         asdf
     </>;
 
-    let button = <>
-    <CircularProgress />
-    </>;
-    
-    if (mycourses[0] == undefined) {
-        button = <>
-            <ListItem button>
-                <ListItemText primary="No Classes" />
-            </ListItem>
-        </>;
-    }
-    else {
-        button = mycourses.map((course) =>
-            <>
-                <Link to={'/portal/dashboard/syllabus/'+course} className="custom-link-normal">
-                    <ListItem
-                        button
-                        onClick={() => {
-                            localStorage.setItem("CurrentSyllabus", course);
-                            //alert("Set");
-                        }}
-                    >
-                        <ListItemIcon>
-                            <Smarticon name={course}></Smarticon>
-                        </ListItemIcon>
-                        <Smartlinktext name={course}></Smartlinktext>
-                    </ListItem>
-                </Link>
-            </>
-        );
+    let button = <div style={{marginLeft:'auto',marginRight:'auto',marginBottom:10}}>
+        <CircularProgress />
+    </div>;
+
+    if (loading === false) {
+        if (mycourses[0] == undefined) {
+            button = <>
+                <ListItem button>
+                    <ListItemText primary="No Classes" />
+                </ListItem>
+            </>;
+        }
+        else {
+            button = mycourses.map((course) =>
+                <>
+                    <Link to={'/portal/dashboard/syllabus/' + course} className="custom-link-normal">
+                        <ListItem
+                            button
+                            onClick={() => {
+                                localStorage.setItem("CurrentSyllabus", course);
+                                //alert("Set");
+                            }}
+                        >
+                            <ListItemIcon>
+                                <Smarticon name={course}></Smarticon>
+                            </ListItemIcon>
+                            <Smartlinktext name={course}></Smartlinktext>
+                        </ListItem>
+                    </Link>
+                </>
+            );
+        }
     }
 
     return (
