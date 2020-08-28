@@ -6,6 +6,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+
+var courselookupname = [];
+var courselookupdescription = [];
 export default function Example() {
     // Declare a new state variable, which we'll call "count"  
     const [userid, setUserid] = useState("");
@@ -18,7 +21,30 @@ export default function Example() {
         })
         .then(res => {
             const courses = res.data.COURSES;
-            console.log(courses);
+            for(var i=0;i<courses.length;i++){
+                courselookupname.push(courses[i].NAME);
+                courselookupdescription.push(courses[i].DESCRIPTION);
+            }
+            console.log(courselookupname);
+            console.log(courselookupdescription);
+            localStorage.setItem("Coursenames", courselookupname);
+            localStorage.setItem("Coursedisc", courselookupdescription);
+        }).catch(error => {
+            console.log(error);
+        });
+        //then get classes
+        axios.post('https://zmsedu.com/api/admin/class/get', {
+
+        })
+        .then(res => {
+            const classes = res.data.CLASS;
+            for(var i=0;i<classes.length;i++){
+                //console.log(classes[i].STUDENTS);
+                if(classes[i].STUDENTS.includes(localStorage.getItem("Userid"))){
+                    console.log(classes[i].CLASS_ID);
+                }
+            }
+            //console.log(courses);
         }).catch(error => {
             console.log(error);
         });
