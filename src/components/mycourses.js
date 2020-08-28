@@ -75,7 +75,7 @@ export default function Example() {
                         button
                         onClick={() => {
                             localStorage.setItem("CurrentSyllabus", course);
-                            alert("Set");
+                            //alert("Set");
                         }}
                     >
                         <ListItemIcon>
