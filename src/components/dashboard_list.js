@@ -72,28 +72,31 @@ export default function DashboardList() {
   return (
     <>
       <List>
-          <ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <Avatar alt={nametoshow} src={Avatarimg} />
+          </ListItemIcon>
+          <ListItemText primary={<div><b>{nametoshow}</b><br /><i style={{ fontSize: '0.8em' }}>{email}</i></div>} />
+        </ListItem>
+        <Divider></Divider>
+        <Link to="/portal/dashboard/home" className="custom-link-normal">
+          <ListItem button>
             <ListItemIcon>
-              <Avatar alt={nametoshow} src={Avatarimg} />
+              <FontAwesomeIcon icon={faHome} size='2x' />
             </ListItemIcon>
-            <ListItemText primary={<div><b>{nametoshow}</b><br/><i style={{fontSize:'0.8em'}}>{email}</i></div>} />
+            <ListItemText primary="Home" />
           </ListItem>
-          <Divider></Divider>
-          <Link to="/portal/dashboard/home" className="custom-link-normal">
-            <ListItem button>
-              <ListItemIcon>
-                <FontAwesomeIcon icon={faHome} size='2x' />
-              </ListItemIcon>
-              <ListItemText primary="Home" />
-            </ListItem>
-          </Link>
-          
+        </Link>
+
       </List>
-     
+
       <List>
-      <ListItem>
-        <ListItemText primary={<b>My Classes</b>} />
-      </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            
+          </ListItemIcon>
+          <ListItemText primary={<b>My Classes</b>} />
+        </ListItem>
       </List>
       <Mycourses></Mycourses>
       <Divider></Divider>

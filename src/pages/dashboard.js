@@ -94,10 +94,10 @@ export default function Dashboard() {
   const classes = useStyles();
   
   return (
-    <div className={classes.root}>
+    <div className={classes.root} style={{backgroundColor:'#eee'}}>
       <CssBaseline />
       <Navbar></Navbar>
-      <main className={classes.content} style={{backgroundColor:'#eee'}}>
+      <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
         <Grid container spacing={3}>

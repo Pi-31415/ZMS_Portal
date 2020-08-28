@@ -23,7 +23,7 @@ function Header(props) {
         return (<ListItemText primary={props.name} secondary={coursetext}/>);
     }
     if(props.name.includes("DA")){
-        let coursetext = "Data Analysis with Excel";
+        let coursetext = <span>Data Analysis<br/>with Excel</span>;
         return (<ListItemText primary={props.name} secondary={coursetext}/>);
     }
     if(props.name.includes("YE")){
@@ -63,7 +63,7 @@ function Header(props) {
         return (<ListItemText primary={props.name} secondary={coursetext}/>);
     }
     if(props.name.includes("EM")){
-        let coursetext = "Electronic Music Composition";
+        let coursetext = <span>Electronic Music<br/>Composition</span>;
         return (<ListItemText primary={props.name} secondary={coursetext}/>);
     }
     else{
