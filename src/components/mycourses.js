@@ -62,11 +62,14 @@ export default function Example() {
         asdf
     </>;
 
-    let button;
+    let button = <>
+    <CircularProgress />
+    </>;
+    
     if (mycourses[0] == undefined) {
         button = <>
             <ListItem button>
-            <CircularProgress />
+                <ListItemText primary="No Classes" />
             </ListItem>
         </>;
     }
