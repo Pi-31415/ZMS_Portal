@@ -84,6 +84,8 @@ export default function SignInSide() {
             for (var i = 0; i < response.data.USERS.length; i++) {
               if(response.data.USERS[i].USERNAME == username){
                 localStorage.setItem("Username", response.data.USERS[i].FIRST_NAME+" "+response.data.USERS[i].LAST_NAME);
+                localStorage.setItem("Userid", response.data.USERS[i].ID);
+                localStorage.setItem("Usermail", response.data.USERS[i].EMAIL);
                 setAuth(result);
               }
             }
