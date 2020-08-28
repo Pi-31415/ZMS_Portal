@@ -6,9 +6,9 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Navbar from '../components/navbar';
 import Copyright from '../components/copyright';
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 //import Upload from '../components/upload';
-
+import axios from 'axios';
 
 const drawerWidth = 240;
 
@@ -99,6 +99,20 @@ export default function Dashboard() {
 
   useEffect(() => {
     setClassname(localStorage.getItem("CurrentSyllabus"));
+    axios.post('https://zmsedu.com/api/admin/class/get', {
+
+    })
+      .then(res => {
+        const classes = res.data.CLASS;
+        for (var i = 0; i < classes.length; i++) {
+          //console.log(classes[i].STUDENTS);
+          if (classes[i].CLASS_ID.includes(classname)) {
+            alert(classes[i].COURSE_ID);
+          }
+        }
+      }).catch(error => {
+        console.log(error);
+      });
   });
 
   return (
