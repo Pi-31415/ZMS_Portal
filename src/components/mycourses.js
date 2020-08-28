@@ -6,6 +6,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import axios from 'axios';
 import Smarticon from './smarticon';
 import Smartlinktext from './smartlinktext';
+import { CircularProgress } from '@material-ui/core';
 var courselookupname = [];
 var courselookupdescription = [];
 var enrolledcourses = [];
@@ -44,9 +45,9 @@ export default function Example() {
                         enrolledcourses.push(classes[i].CLASS_ID);
                         enrolledcourseid.push(classes[i].COURSE_ID);
                     }
-
                 }
                 //console.log(enrolledcourseid);
+
                 var set = new Set(enrolledcourses);
                 let array = [...set];
                 setMycourses(array);
@@ -65,6 +66,7 @@ export default function Example() {
     if (mycourses[0] == undefined) {
         button = <>
             <ListItem button>
+                <CircularProgress />
                 <ListItemText primary="No Classes" />
             </ListItem>
         </>;
