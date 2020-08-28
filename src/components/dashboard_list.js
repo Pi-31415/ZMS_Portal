@@ -13,8 +13,8 @@ import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
 //import Divider from '@material-ui/core/Divider';
 import Avatarimg from '../img/avatar.png';
-
-
+import Mycourses from './mycourses';
+import Divider from '@material-ui/core/Divider';
 
 export default function DashboardList() {
   const [nametoshow, setNametoshow] = useState("");
@@ -87,6 +87,9 @@ export default function DashboardList() {
           </Link>
         </div>
       </List>
+      <Divider></Divider>
+      
+      <Mycourses></Mycourses>
 
       <List>
         <div>
