@@ -10,33 +10,37 @@ import axios from 'axios';
 var namelist = localStorage.getItem("Coursenames").split(",");
 var disclist = localStorage.getItem("Coursedisc").split(",");
 
+
 export default function Example(props) {
     // Declare a new state variable, which we'll call "count"  
-    const [search,setSearch] = useState(props.name);
+    const [search,setSearch] = useState(localStorage.getItem("CurrentCOURSE"));
+    const [reference,setReference] = useState("");
 
     useEffect(() => {    // Update the document title using the browser API  
-        console.log();
+        setSearch(localStorage.getItem("CurrentCOURSE"));
         axios.post("https://zmsedu.com/api/admin/syllabus/get", {
             //ROLE: "Student"
         })
             .then(res => {
                 const syll = res.data.SYLLABUS;
-                
                 for(var i=0;i<syll.length;i++){
-                    console.log(search);
+                    if(syll[i].COURSE_ID == search){
+                        setReference(syll[i].REFERENCE.toString());
+                        //console.log(reference);
+                    }
                 }
 
             }).catch(error => {
                 alert(error);
             });
 
-    }, []);
+    });
 
     return (
         <>
-            <h1>{namelist[parseInt(props.name) - 1]}: {props.course}</h1>
-            <p>{props.name}</p>
-
+            <h1>{namelist[parseInt(props.name) - 1]}: {props.course} Syllabus</h1>
+            {/*<p>{props.name}</p> */}
+            <MDReactComponent text={reference} />
         </>
     );
 }
