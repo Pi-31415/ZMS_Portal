@@ -109,6 +109,7 @@ export default function Dashboard() {
         for(var i=0;i<classes.length;i++){
           if(classes[i].CLASS_ID == classname){
             setCourseid(classes[i].COURSE_ID);
+            localStorage.setItem("CurrentCOURSE",classes[i].COURSE_ID);
           }
         }
 
