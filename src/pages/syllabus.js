@@ -9,6 +9,7 @@ import Copyright from '../components/copyright';
 import { useParams } from 'react-router-dom';
 //import Upload from '../components/upload';
 import axios from 'axios';
+import Markdownrenderer from '../components/markdownrenderer';
 
 const drawerWidth = 240;
 
@@ -127,11 +128,8 @@ export default function Dashboard() {
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
             {/* Chart */}
-            <Grid item xs={12} md={8} lg={6}>
-              {classname}
-            </Grid>
             <Grid item xs={12}>
-            {courseid}
+            <Markdownrenderer name={courseid} course={classname}></Markdownrenderer>
               {/*
               <Paper className={classes.paper}>
               Something can go here
