@@ -19,6 +19,7 @@
 		"clsx": "latest",
 		"dayz": "^2.9.0",
 		"fg-loadcss": "^3.1.0",
+		"markdown-react-js": "^1.0.2",
 		"material-ui-dropzone": "^3.3.0",
 		"moment": "^2.27.0",
 		"moment-timezone": "^0.5.31",
