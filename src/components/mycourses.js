@@ -69,7 +69,7 @@ export default function Example() {
                         <ListItemIcon>
                         <Smarticon name={course}></Smarticon>
                         </ListItemIcon>
-                        <ListItemText primary={course} />
+                        <ListItemText primary={course} secondary={course}/>
                     </ListItem>
                 </Link>
             </>
