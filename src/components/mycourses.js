@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -10,23 +10,22 @@ export default function Example() {
     const [count, setCount] = useState(0);
 
 
-    /*
-    <div>
-          <p>You clicked {count} times</p>
-          <button onClick={() => setCount(count + 1)}>
-            Click me
-          </button>
-        </div>
-    */
+    useEffect(() => {    // Update the document title using the browser API  
+
+        document.title = `You clicked ${count} times`;
+        
+    });
 
     return (
-        <Link to="/portal/dashboard/schedule" className="custom-link-normal">
-            <ListItem button>
-                <ListItemIcon>
-                    <FontAwesomeIcon icon={faCalendarAlt} size='2x' />
-                </ListItemIcon>
-                <ListItemText primary="Schedule" />
-            </ListItem>
-        </Link>
+        <>
+            <Link to="/portal/dashboard/schedule" className="custom-link-normal">
+                <ListItem button>
+                    <ListItemIcon>
+                        <FontAwesomeIcon icon={faCalendarAlt} size='2x' />
+                    </ListItemIcon>
+                    <ListItemText primary="Schedule" />
+                </ListItem>
+            </Link>
+        </>
     );
 }
