@@ -92,7 +92,7 @@ export default function DashboardList() {
      
       <List>
       <ListItem>
-        <ListItemText primary={<b>My Courses</b>} />
+        <ListItemText primary={<b>My Classes</b>} />
       </ListItem>
       </List>
       <Mycourses></Mycourses>

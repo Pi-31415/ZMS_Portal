@@ -9,6 +9,7 @@ import axios from 'axios';
 
 var courselookupname = [];
 var courselookupdescription = [];
+var enrolledcourses = [];
 export default function Example() {
     // Declare a new state variable, which we'll call "count"  
     const [userid, setUserid] = useState("");
@@ -25,8 +26,6 @@ export default function Example() {
                 courselookupname.push(courses[i].NAME);
                 courselookupdescription.push(courses[i].DESCRIPTION);
             }
-            console.log(courselookupname);
-            console.log(courselookupdescription);
             localStorage.setItem("Coursenames", courselookupname);
             localStorage.setItem("Coursedisc", courselookupdescription);
         }).catch(error => {
@@ -41,10 +40,11 @@ export default function Example() {
             for(var i=0;i<classes.length;i++){
                 //console.log(classes[i].STUDENTS);
                 if(classes[i].STUDENTS.includes(localStorage.getItem("Userid"))){
-                    console.log(classes[i].CLASS_ID);
+                    enrolledcourses.push(classes[i].CLASS_ID);
                 }
+                
             }
-            //console.log(courses);
+            console.log(enrolledcourses);
         }).catch(error => {
             console.log(error);
         });
