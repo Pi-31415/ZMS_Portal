@@ -5,10 +5,11 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import axios from 'axios';
 import Smarticon from './smarticon';
-
+import Smartlinktext from './smartlinktext';
 var courselookupname = [];
 var courselookupdescription = [];
 var enrolledcourses = [];
+var enrolledcourseid = [];
 export default function Example() {
     // Declare a new state variable, which we'll call "count"  
     const [userid, setUserid] = useState("");
@@ -41,10 +42,11 @@ export default function Example() {
                     //console.log(classes[i].STUDENTS);
                     if (classes[i].STUDENTS.includes(localStorage.getItem("Userid"))) {
                         enrolledcourses.push(classes[i].CLASS_ID);
+                        enrolledcourseid.push(classes[i].COURSE_ID);
                     }
 
                 }
-                console.log(enrolledcourses);
+                console.log(enrolledcourseid);
                 setMycourses(enrolledcourses);
             }).catch(error => {
                 console.log(error);
@@ -52,6 +54,10 @@ export default function Example() {
 
     }, []);
 //
+
+    let coursetext = <>
+    asdf
+     </>;
 
     let button;
     if (mycourses[0] == undefined) {
@@ -69,7 +75,7 @@ export default function Example() {
                         <ListItemIcon>
                         <Smarticon name={course}></Smarticon>
                         </ListItemIcon>
-                        <ListItemText primary={course} secondary={course}/>
+                        <Smartlinktext name={course}></Smartlinktext>
                     </ListItem>
                 </Link>
             </>
