@@ -52,7 +52,7 @@ export default function Example() {
             });
 
     }, []);
-
+//<FontAwesomeIcon icon={faCalendarAlt} size='2x' />
 
     let button;
     if (mycourses[0] == undefined) {
@@ -68,7 +68,7 @@ export default function Example() {
                 <Link to="/portal/dashboard/schedule" className="custom-link-normal">
                     <ListItem button>
                         <ListItemIcon>
-                            <FontAwesomeIcon icon={faCalendarAlt} size='2x' />
+                        {course}
                         </ListItemIcon>
                         <ListItemText primary={course} />
                     </ListItem>
