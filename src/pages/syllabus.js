@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -92,6 +92,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Dashboard() {
   const classes = useStyles();
+  const [classname, setClassname] = useState(localStorage.getItem("CurrentSyllabus"));
   
   return (
     <div className={classes.root} style={{backgroundColor:'#eee'}}>
@@ -103,7 +104,7 @@ export default function Dashboard() {
         <Grid container spacing={3}>
             {/* Chart */}
             <Grid item xs={12} md={8} lg={6}>
-                Syllabus
+                {classname}
             </Grid>
             {/* Recent Deposits */}
             <Grid item xs={12} md={4} lg={6}>
