@@ -12,7 +12,7 @@ export default function Example() {
 
     useEffect(() => {    // Update the document title using the browser API  
         setUserid(localStorage.getItem("Userid"));
-
+        //load all information into local storage
         axios.post('https://zmsedu.com/api/admin/course/get', {
 
         })
@@ -23,7 +23,7 @@ export default function Example() {
             console.log(error);
         });
 
-    });
+    }, []);
 
     return (
         <>
