@@ -58,10 +58,6 @@ export default function Example() {
     }, []);
     //
 
-    let coursetext = <>
-        asdf
-    </>;
-
     let button = <div style={{marginLeft:'auto',marginRight:'auto',marginBottom:10}}>
         <CircularProgress />
     </div>;
