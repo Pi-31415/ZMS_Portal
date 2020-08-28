@@ -88,9 +88,11 @@ export default function DashboardList() {
         </div>
       </List>
       <Divider></Divider>
-      
+      <ListItem>
+        <ListItemText primary={<b>My Courses</b>} />
+      </ListItem>
       <Mycourses></Mycourses>
-
+      <Divider></Divider>
       <List>
         <div>
           <Link to="/portal/" className="custom-link-normal">
