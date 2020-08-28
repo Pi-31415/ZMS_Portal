@@ -18,9 +18,11 @@ import Divider from '@material-ui/core/Divider';
 
 export default function DashboardList() {
   const [nametoshow, setNametoshow] = useState("");
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     setNametoshow(localStorage.getItem("Username"));
+    setEmail(localStorage.getItem("Usermail"));
   }, [])
 
 
@@ -75,8 +77,12 @@ export default function DashboardList() {
             <ListItemIcon>
               <Avatar alt={nametoshow} src={Avatarimg} />
             </ListItemIcon>
-            <ListItemText primary={nametoshow} />
+            <ListItemText primary={<b>{nametoshow}</b>} />
           </ListItem>
+          <ListItem>
+            <ListItemText primary={<i style={{fontSize:'0.8em'}}>{email}</i>} />
+          </ListItem>
+          <Divider></Divider>
           <Link to="/portal/dashboard/home" className="custom-link-normal">
             <ListItem button>
               <ListItemIcon>
