@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+import Smarticon from './smarticon';
 
 var courselookupname = [];
 var courselookupdescription = [];
@@ -52,7 +51,7 @@ export default function Example() {
             });
 
     }, []);
-//<FontAwesomeIcon icon={faCalendarAlt} size='2x' />
+//
 
     let button;
     if (mycourses[0] == undefined) {
@@ -68,7 +67,7 @@ export default function Example() {
                 <Link to="/portal/dashboard/schedule" className="custom-link-normal">
                     <ListItem button>
                         <ListItemIcon>
-                        {course}
+                        <Smarticon name={course}></Smarticon>
                         </ListItemIcon>
                         <ListItemText primary={course} />
                     </ListItem>
