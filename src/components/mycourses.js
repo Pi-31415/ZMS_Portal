@@ -53,11 +53,11 @@ export default function Example() {
             });
 
     }, []);
-//
+    //
 
     let coursetext = <>
-    asdf
-     </>;
+        asdf
+    </>;
 
     let button;
     if (mycourses[0] == undefined) {
@@ -70,10 +70,15 @@ export default function Example() {
     else {
         button = mycourses.map((course) =>
             <>
-                <Link to="/portal/dashboard/home" className="custom-link-normal">
-                    <ListItem button>
+                <Link to="/portal/dashboard/syllabus" className="custom-link-normal">
+                    <ListItem
+                        button
+                        onClick={() => {
+                            alert(course);
+                        }}
+                    >
                         <ListItemIcon>
-                        <Smarticon name={course}></Smarticon>
+                            <Smarticon name={course}></Smarticon>
                         </ListItemIcon>
                         <Smartlinktext name={course}></Smartlinktext>
                     </ListItem>
