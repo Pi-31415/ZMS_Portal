@@ -130,12 +130,8 @@ export default function Dashboard() {
             <Grid item xs={12} md={8} lg={6}>
               {classname}
             </Grid>
-            {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={6}>
-              {courseid}
-            </Grid>
-            {/* Recent Orders */}
             <Grid item xs={12}>
+            {courseid}
               {/*
               <Paper className={classes.paper}>
               Something can go here
