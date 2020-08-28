@@ -13,6 +13,7 @@ var enrolledcourses = [];
 export default function Example() {
     // Declare a new state variable, which we'll call "count"  
     const [userid, setUserid] = useState("");
+    const [mycourses,setMycourses] = useState([]);
 
     useEffect(() => {    // Update the document title using the browser API  
         setUserid(localStorage.getItem("Userid"));
@@ -45,6 +46,7 @@ export default function Example() {
                 
             }
             console.log(enrolledcourses);
+            setMycourses(enrolledcourses);
         }).catch(error => {
             console.log(error);
         });
