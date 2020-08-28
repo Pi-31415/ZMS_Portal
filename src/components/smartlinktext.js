@@ -23,51 +23,51 @@ function Header(props) {
         return (<ListItemText primary={props.name} secondary={coursetext}/>);
     }
     if(props.name.includes("DA")){
-        let coursetext = "Game Development";
+        let coursetext = "Data Analysis with Excel";
         return (<ListItemText primary={props.name} secondary={coursetext}/>);
     }
     if(props.name.includes("YE")){
-        let coursetext = "Game Development";
+        let coursetext = "Young Engineer";
         return (<ListItemText primary={props.name} secondary={coursetext}/>);
     }
     if(props.name.includes("YS")){
-        let coursetext = "Game Development";
+        let coursetext = "Young Socrates";
         return (<ListItemText primary={props.name} secondary={coursetext}/>);
     }
     if(props.name.includes("PX")){
-        let coursetext = "Game Development";
+        let coursetext = "Psychology";
         return (<ListItemText primary={props.name} secondary={coursetext}/>);
     }
     if(props.name.includes("GC")){
-        let coursetext = "Game Development";
+        let coursetext = "Global Crisis";
         return (<ListItemText primary={props.name} secondary={coursetext}/>);
     }
     if(props.name.includes("SI")){
-        let coursetext = "Game Development";
+        let coursetext = "Stock Investing";
         return (<ListItemText primary={props.name} secondary={coursetext}/>);
     }
     if(props.name.includes("HM")){
-        let coursetext = "Game Development";
+        let coursetext = "How Markets Work";
         return (<ListItemText primary={props.name} secondary={coursetext}/>);
     }
     if(props.name.includes("BC")){
-        let coursetext = "Game Development";
+        let coursetext = "Business Case Analysis";
         return (<ListItemText primary={props.name} secondary={coursetext}/>);
     }
     if(props.name.includes("LX")){
-        let coursetext = "Game Development";
+        let coursetext = "Law";
         return (<ListItemText primary={props.name} secondary={coursetext}/>);
     }
     if(props.name.includes("AX")){
-        let coursetext = "Game Development";
+        let coursetext = "Architecture";
         return (<ListItemText primary={props.name} secondary={coursetext}/>);
     }
     if(props.name.includes("EM")){
-        let coursetext = "Game Development";
+        let coursetext = "Electronic Music Composition";
         return (<ListItemText primary={props.name} secondary={coursetext}/>);
     }
     else{
-        let coursetext = "Game Development";
+        let coursetext = props.name;
         return (<ListItemText primary={props.name} secondary={coursetext}/>);
     }
 
