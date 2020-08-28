@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Navbar from '../components/navbar';
 import Copyright from '../components/copyright';
 //import Upload from '../components/upload';
-
+import mycourses from '../components/mycourses';
 
 const drawerWidth = 240;
 

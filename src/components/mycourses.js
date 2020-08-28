@@ -21,7 +21,8 @@ const App = props => {
                 <Item key={i.id}
                     name={i.name}
                     price={i.price} />
-            ))} </ul>
+            ))} 
+        </ul>
         <input type="text" ref={nameRef} /><br /> <input type="text" ref={priceRef} /><br /> <button onClick={add}>Add</button>
     </div>)
 }
