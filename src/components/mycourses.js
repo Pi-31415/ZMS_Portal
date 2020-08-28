@@ -72,7 +72,7 @@ export default function Example() {
     else {
         button = mycourses.map((course) =>
             <>
-                <Link to="/portal/dashboard/syllabus" className="custom-link-normal">
+                <Link to={'/portal/dashboard/syllabus/'+course} className="custom-link-normal">
                     <ListItem
                         button
                         onClick={() => {

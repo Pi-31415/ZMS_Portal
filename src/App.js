@@ -32,7 +32,7 @@ const App = props => {
       <div>
         <div style={{ padding: '0', margin: '0' }}>
           <Switch>
-          <Route path="/portal/dashboard/syllabus"><Syllabus></Syllabus></Route>
+          <Route path="/portal/dashboard/syllabus/:name"><Syllabus></Syllabus></Route>
           <Route path="/portal/dashboard/home"><Dashboard></Dashboard></Route>
           <Route path="/portal/signup"><Signup></Signup></Route>
           <Route path="/portal/accountcreated"><AccountCreated></AccountCreated></Route>

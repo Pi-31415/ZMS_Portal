@@ -6,6 +6,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Navbar from '../components/navbar';
 import Copyright from '../components/copyright';
+import {useParams} from 'react-router-dom';
 //import Upload from '../components/upload';
 
 
@@ -91,6 +92,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Dashboard() {
+  const { name } = useParams();
   const classes = useStyles();
   const [classname, setClassname] = useState("");
 
