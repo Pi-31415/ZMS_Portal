@@ -46,8 +46,10 @@ export default function Example() {
                     }
 
                 }
-                console.log(enrolledcourseid);
-                setMycourses(enrolledcourses);
+                //console.log(enrolledcourseid);
+                var set = new Set(enrolledcourses);
+                let array = [...set];
+                setMycourses(array);
             }).catch(error => {
                 console.log(error);
             });

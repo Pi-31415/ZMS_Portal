@@ -92,23 +92,28 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Dashboard() {
   const classes = useStyles();
-  const [classname, setClassname] = useState(localStorage.getItem("CurrentSyllabus"));
-  
+  const [classname, setClassname] = useState("");
+
+
+  useEffect(() => {
+    setClassname(localStorage.getItem("CurrentSyllabus"));
+  });
+
   return (
-    <div className={classes.root} style={{backgroundColor:'#eee'}}>
+    <div className={classes.root} style={{ backgroundColor: '#eee' }}>
       <CssBaseline />
       <Navbar></Navbar>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-        <Grid container spacing={3}>
+          <Grid container spacing={3}>
             {/* Chart */}
             <Grid item xs={12} md={8} lg={6}>
-                {classname}
+              {classname}
             </Grid>
             {/* Recent Deposits */}
             <Grid item xs={12} md={4} lg={6}>
-                
+
             </Grid>
             {/* Recent Orders */}
             <Grid item xs={12}>
