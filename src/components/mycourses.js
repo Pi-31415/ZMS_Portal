@@ -66,8 +66,7 @@ export default function Example() {
     if (mycourses[0] == undefined) {
         button = <>
             <ListItem button>
-                <CircularProgress />
-                <ListItemText primary="No Classes" />
+            <CircularProgress />
             </ListItem>
         </>;
     }
