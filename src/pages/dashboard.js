@@ -6,7 +6,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Navbar from '../components/navbar';
 import Copyright from '../components/copyright';
-//import Upload from '../components/upload';
+import Upload from '../components/upload';
 
 
 const drawerWidth = 240;
@@ -111,11 +111,7 @@ export default function Dashboard() {
             </Grid>
             {/* Recent Orders */}
             <Grid item xs={12}>
-              {/*
-              <Paper className={classes.paper}>
-              Something can go here
-              </Paper>
-              */}
+              <Upload></Upload>
             </Grid>
           </Grid>
           <Box pt={4}>
