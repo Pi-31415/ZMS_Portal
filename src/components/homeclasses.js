@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+import Class_table from './class_table';
+
 export default function Example() {
     // Declare a new state variable, which we'll call "count"  
 
@@ -38,7 +34,7 @@ export default function Example() {
 
     return (
         <>
-            Hi {classlist}
+            <Class_table classdata={{classlist}}></Class_table>
         </>
     );
 }
