@@ -34,7 +34,7 @@ export default function Example() {
 
     return (
         <>
-            <Class_table classdata={{classlist}}></Class_table>
+            <Class_table classdata={classlist}></Class_table>
         </>
     );
 }

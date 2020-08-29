@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 
-export default function Example() {
+export default function Example(props) {
     
 
     useEffect(() => {    // Update the document title using the browser API  
@@ -12,6 +12,7 @@ export default function Example() {
 
     return (
         <>
+            {props.classdata}
             Class Table
         </>
     );
