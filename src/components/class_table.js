@@ -5,12 +5,12 @@ export default function Example(props) {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        setData(props.classdata);
+        setData();
     },[]);
 
     return (
         <>
-            {data}
+            {props.classdata}
             Class Table
         </>
     );
