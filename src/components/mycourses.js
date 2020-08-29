@@ -11,6 +11,7 @@ var courselookupname = [];
 var courselookupdescription = [];
 var enrolledcourses = [];
 var enrolledcourseid = [];
+var enrolledclasses = [];
 export default function Example() {
     // Declare a new state variable, which we'll call "count"  
     const [userid, setUserid] = useState("");
@@ -42,14 +43,21 @@ export default function Example() {
                 for (var i = 0; i < classes.length; i++) {
                     //console.log(classes[i].STUDENTS);
                     if (classes[i].STUDENTS.includes(localStorage.getItem("Userid"))) {
+                        enrolledclasses.push(classes[i].CLASS_ID);
                         enrolledcourses.push(classes[i].CLASS_ID);
                         enrolledcourseid.push(classes[i].COURSE_ID);
                     }
                 }
-                //console.log(enrolledcourseid);
+                
                 var set = new Set(enrolledcourses);
                 let array = [...set];
                 setMycourses(array);
+
+                //console.log(enrolledclasses);
+                set = new Set(enrolledclasses);
+                array = [...set];
+                localStorage.setItem("Myclasses",array);
+
                 setLoading(false);
             }).catch(error => {
                 console.log(error);

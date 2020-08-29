@@ -95,7 +95,7 @@ export default function DashboardList() {
           <ListItemIcon>
             
           </ListItemIcon>
-          <ListItemText primary={<b>My Classes</b>} />
+          <ListItemText primary={<b>My Syllabus</b>} />
         </ListItem>
       </List>
       <Mycourses></Mycourses>
