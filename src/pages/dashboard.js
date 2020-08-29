@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Navbar from '../components/navbar';
 import Copyright from '../components/copyright';
 import Upload from '../components/upload';
-
+import Homeclasses from '../components/homeclasses';
 
 const drawerWidth = 240;
 
@@ -103,7 +103,7 @@ export default function Dashboard() {
         <Grid container spacing={3}>
             {/* Chart */}
             <Grid item xs={12} md={8} lg={6}>
-                
+                <Homeclasses></Homeclasses>
             </Grid>
             {/* Recent Deposits */}
             <Grid item xs={12} md={4} lg={6}>
@@ -111,7 +111,7 @@ export default function Dashboard() {
             </Grid>
             {/* Recent Orders */}
             <Grid item xs={12}>
-              <Upload></Upload>
+              {/*<Upload></Upload>*/}
             </Grid>
           </Grid>
           <Box pt={4}>
