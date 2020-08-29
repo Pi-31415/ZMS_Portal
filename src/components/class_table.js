@@ -2,17 +2,15 @@ import React, { useState, useEffect } from 'react';
 
 
 export default function Example(props) {
-    
+    const [data, setData] = useState();
 
-    useEffect(() => {    // Update the document title using the browser API  
-       
-        
-
-    });
+    useEffect(() => {
+        setData(props.classdata);
+    },[]);
 
     return (
         <>
-            {props.classdata}
+            {data}
             Class Table
         </>
     );
