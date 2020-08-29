@@ -27,9 +27,12 @@ class FileUpload extends React.Component{
 
         axios.post(url, data, { // receive two parameter endpoint url ,form data 
         })
-        .then(res => { // then print response status
-            console.warn(res);
-        })
+        .then(res => {
+            console.log(res);
+            alert("Yea");
+        }).catch(error => {
+            console.log(error);
+        });
 
     }
 
