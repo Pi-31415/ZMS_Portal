@@ -10,9 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 export default function Example() {
     // Declare a new state variable, which we'll call "count"  
-    const [myclasses,setMyclasses] = useState([]);
     
-
     useEffect(() => {    // Update the document title using the browser API  
         
     },[]);
