@@ -10,7 +10,7 @@ import { useParams } from 'react-router-dom';
 //import Upload from '../components/upload';
 import axios from 'axios';
 import Markdownrenderer from '../components/markdownrenderer';
-
+import Paper from '@material-ui/core/Paper';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -127,8 +127,10 @@ export default function Dashboard() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
+        <Paper style={{padding:50}}>
           <Grid container spacing={3}>
             {/* Chart */}
+            
             <Grid item xs={12}>
             <Markdownrenderer name={courseid} course={classname}></Markdownrenderer>
               {/*
@@ -138,6 +140,7 @@ export default function Dashboard() {
               */}
             </Grid>
           </Grid>
+          </Paper>
           <Box pt={4}>
             <Copyright />
           </Box>
