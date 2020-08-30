@@ -54,7 +54,7 @@ export default function Example(props) {
     }
 
     const joinzoom = () => {
-        alert("Hello");
+        //alert("Hello");
         localStorage.setItem("ZOOMID", zoomlink);
         localStorage.setItem("ZOOMPASS", passcode);
         window.open("https://zmsedu.com/zoom/"); 
