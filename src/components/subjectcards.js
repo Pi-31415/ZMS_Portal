@@ -30,8 +30,8 @@ export default function Example(props) {
     if (mydata != undefined) {
         for(var i=mydata.lessons.length-1;i>=0;i--){
             if(mydata.lessons[i].CLASS_ID == props.data){
-                console.log(mydata.lessons[i].TOPIC);
-                classdata.push(mydata.lessons[i].TOPIC);
+                //console.log(mydata.lessons[i].TOPIC);
+                classdata.push(mydata.lessons[i].LESSON_ID);
             }
         }
     } 
