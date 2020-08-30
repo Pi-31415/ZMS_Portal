@@ -31,7 +31,7 @@ export default function Example(props) {
         for(var i=0;i<mydata.lessons.length;i++){
             if(mydata.lessons[i].CLASS_ID == props.data){
                 console.log(mydata.lessons[i].TOPIC);
-                classdata.push(mydata.lessons[i].TOPIC);
+                classdata.push(mydata.lessons[i].LESSON_ID);
             }
         }
     } 
