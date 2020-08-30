@@ -23,8 +23,17 @@ export default function Example(props) {
 
     useEffect(() => {
         refresh();
-        
+
     }, []);
+
+
+    if (mydata != undefined) {
+        for(var i=0;i<mydata.lessons.length;i++){
+            if(mydata.lessons[i].CLASS_ID == props.data){
+                console.log(mydata.lessons[i].CLASS_ID);
+            }
+        }
+    } 
 
     return (
         <>
