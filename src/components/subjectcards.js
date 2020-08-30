@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
-
+import Classdetail from './class_detail_card';
 
 export default function Example(props) {
 
@@ -41,7 +41,7 @@ export default function Example(props) {
             <Paper style={{ padding: 20, margin: 20 }}>
                 <h3>{props.data} Lessons</h3>
                 <ul>
-                {classdata.map((u) => <li>{u}</li>)}
+                {classdata.map((u) => <Classdetail id={u}></Classdetail>)}
                 </ul>
                 
             </Paper>
