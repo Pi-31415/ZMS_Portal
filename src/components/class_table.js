@@ -17,8 +17,9 @@ export default function Example(props) {
 
     return (
         <>
-            {mydata}
+            
             Class Table
+            {mydata}
         </>
     );
 }
