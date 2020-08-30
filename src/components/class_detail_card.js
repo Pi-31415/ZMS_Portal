@@ -13,7 +13,7 @@ export default function Example(props) {
             .then(res => {
                 const lessons = res.data.LESSONS;
                 setMydata({ lessons });
-                console.log("Refreshed");
+                //console.log("Refreshed");
             }).catch(error => {
                 alert(error);
             });
@@ -25,17 +25,33 @@ export default function Example(props) {
     }, []);
 
     let classdata = "";
+    let datedata = "";
+    let classid = "";
+    let index = 0;
+    let status = "";
+    let zoomlink = "";
+    let passcode = "";
     if (mydata != undefined) {
         for (var i = mydata.lessons.length - 1; i >= 0; i--) {
             if (mydata.lessons[i].LESSON_ID == props.id) {
-                console.log(mydata.lessons[i].TOPIC);
+                //console.log(mydata.lessons[i].TOPIC);
                 classdata = mydata.lessons[i].TOPIC;
+                datedata = mydata.lessons[i].START_DATETIME;
+                classid = mydata.lessons[i].CLASS_ID;
+                status = mydata.lessons[i].STATUS;
+                zoomlink = mydata.lessons[i].LESSON_LINK.ZOOM_LINK;
+                passcode = mydata.lessons[i].LESSON_LINK.PASSCODE;
             }
         }
     }
     return (
         <>
             {classdata}
+            {datedata}
+            {classid}
+            {status}
+            {zoomlink}
+            {passcode}
             <Divider />
         </>
     );

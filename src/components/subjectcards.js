@@ -6,7 +6,6 @@ import Classdetail from './class_detail_card';
 export default function Example(props) {
 
     const [mydata, setMydata] = useState();
-    const [teacherdata, setTeacherdata] = useState();
 
     const api_get = "https://zmsedu.com/api/admin/lesson/get";
 
@@ -17,7 +16,7 @@ export default function Example(props) {
         .then(res => {
             const lessons = res.data.LESSONS;
             setMydata({ lessons });
-            console.log("Refreshed");
+            //console.log("Refreshed");
         }).catch(error => {
             alert(error);
         });
