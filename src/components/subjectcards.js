@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export default function Example(props) {
 
-    const [data, setData] = useState();
+    const [mydata, setMydata] = useState();
 
     const api_get = "https://zmsedu.com/api/admin/lesson/get";
 
@@ -14,8 +14,7 @@ export default function Example(props) {
         })
             .then(res => {
                 const lessons = res.data.LESSONS;
-                setData({ lessons });
-                console.log(data);
+                setMydata({ lessons });
                 console.log("Refreshed");
             }).catch(error => {
                 alert(error);
