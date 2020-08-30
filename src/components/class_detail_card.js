@@ -51,6 +51,12 @@ export default function Example(props) {
             }
         }
     }
+
+    let button = <>Join</>;
+    if(status == "Scheduled"){
+        button = <>Join</>;
+    }
+
     return (
         <>
             <ListItem>
@@ -59,7 +65,7 @@ export default function Example(props) {
                 </ListItemIcon>
                 <ListItemText primary={classdata} secondary={<Dateparser value={datedata}></Dateparser>} />
                 <ListItemText primary={status} secondary={<Instructorinfo value={classid}></Instructorinfo>} />
-                
+                <ListItemText primary={button}  />
             </ListItem>
             <Divider />
         </>
