@@ -28,10 +28,10 @@ export default function Example(props) {
 
     let classdata = [];
     if (mydata != undefined) {
-        for(var i=0;i<mydata.lessons.length;i++){
+        for(var i=mydata.lessons.length-1;i>=0;i--){
             if(mydata.lessons[i].CLASS_ID == props.data){
                 console.log(mydata.lessons[i].TOPIC);
-                classdata.push(mydata.lessons[i].LESSON_ID);
+                classdata.push(mydata.lessons[i].TOPIC);
             }
         }
     } 
