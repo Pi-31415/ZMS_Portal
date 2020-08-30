@@ -7,6 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Dateparser from './dateparser';
 import Instructorinfo from './instructorinfo';
+import Button from '@material-ui/core/Button';
 export default function Example(props) {
     const [mydata, setMydata] = useState();
 
@@ -52,9 +53,13 @@ export default function Example(props) {
         }
     }
 
-    let button = <>Join</>;
-    if(status == "Scheduled"){
-        button = <>Join</>;
+    let button = <Button variant="outlined" color="primary">
+            Join
+                </Button>;
+    if (status == "Scheduled") {
+        button = <Button variant="outlined" color="primary">
+            Join
+                </Button>;
     }
 
     return (
@@ -65,7 +70,7 @@ export default function Example(props) {
                 </ListItemIcon>
                 <ListItemText primary={classdata} secondary={<Dateparser value={datedata}></Dateparser>} />
                 <ListItemText primary={status} secondary={<Instructorinfo value={classid}></Instructorinfo>} />
-                <ListItemText primary={button}  />
+                <ListItemText primary={button} />
             </ListItem>
             <Divider />
         </>
