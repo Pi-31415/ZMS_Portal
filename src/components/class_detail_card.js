@@ -57,7 +57,7 @@ export default function Example(props) {
         alert("Hello");
         localStorage.setItem("ZOOMID", zoomlink);
         localStorage.setItem("ZOOMPASS", passcode);
-        window.open("https://www.w3schools.com"); 
+        window.open("https://zmsedu.com/zoom/"); 
     }
 
     let button = <Button variant="outlined" color="primary" disabled>
