@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-
+import Subjectcard from './subjectcards';
 var data = [];
 
 export default function Example(props) {
@@ -13,10 +12,8 @@ export default function Example(props) {
     }
 
     return (
-        <>
-            <ul>
-                {yayaya.map((number)=> <li>{number}</li>)}
-            </ul>
+        <>           
+                {yayaya.map((number)=> <Subjectcard data={number}></Subjectcard>)}
         </>
     );
 }

@@ -107,10 +107,6 @@ export default function Dashboard() {
                 <Homeclasses></Homeclasses>
             </Grid>
 
-            {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={6}>
-
-            </Grid>
             {/* Recent Orders */}
             <Grid item xs={12}>
               {/*<Upload></Upload>*/}
