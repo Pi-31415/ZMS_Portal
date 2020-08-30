@@ -4,9 +4,10 @@ import React, { useState, useEffect } from 'react';
 var data = [];
 
 export default function Example(props) {
+    const [mydata, setMydata] = useState([]);
     
     const stateme = () => {
-        console.log(data);
+        setMydata(data);
     }
 
     useEffect(() => {
@@ -16,7 +17,7 @@ export default function Example(props) {
 
     return (
         <>
-            {data}
+            {mydata}
             Class Table
         </>
     );
