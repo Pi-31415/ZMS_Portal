@@ -6,6 +6,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Dateparser from './dateparser';
+import Instructorinfo from './instructorinfo';
 export default function Example(props) {
     const [mydata, setMydata] = useState();
 
@@ -57,7 +58,7 @@ export default function Example(props) {
                     <Smarticon name={classid}></Smarticon>
                 </ListItemIcon>
                 <ListItemText primary={classdata} secondary={<Dateparser value={datedata}></Dateparser>} />
-                <ListItemText primary={status} secondary={classid} />
+                <ListItemText primary={status} secondary={<Instructorinfo value={classid}></Instructorinfo>} />
                 
             </ListItem>
             <Divider />
