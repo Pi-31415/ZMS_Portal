@@ -16,7 +16,7 @@ export default function Example(props) {
 
     return (
         <>
-            
+            {data}
             Class Table
         </>
     );
