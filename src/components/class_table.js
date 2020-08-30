@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
 
+var data = [];
 
 export default function Example(props) {
-    const [data, setData] = useState([]);
-
     
+    const stateme = () => {
+        console.log(data);
+    }
 
     useEffect(() => {
-        console.log(props.classdata);
+        data = props.classdata;
+        stateme();
     },[props.classdata]);
 
     return (
