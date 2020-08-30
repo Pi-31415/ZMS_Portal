@@ -21,17 +21,6 @@ export default function Example(props) {
         }).catch(error => {
             alert(error);
         });
-        //then get teachers
-        axios.post(api_get, {
-        })
-        .then(res => {
-            const lessons = res.data.LESSONS;
-            setTeacherdata({ lessons });
-            console.log("Refreshed");
-        }).catch(error => {
-            alert(error);
-        });
-
     }
 
     useEffect(() => {
