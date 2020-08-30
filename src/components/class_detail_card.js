@@ -53,11 +53,16 @@ export default function Example(props) {
         }
     }
 
+    const joinzoom = () => {
+        alert("Hello");
+    }
+
     let button = <Button variant="outlined" color="primary" disabled>
             Join
                 </Button>;
+                
     if (status == "Scheduled") {
-        button = <Button variant="outlined" color="primary">
+        button = <Button variant="outlined" color="primary" onClick={joinzoom}>
             Join
                 </Button>;
     }

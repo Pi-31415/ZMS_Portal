@@ -48,7 +48,7 @@ function Headline(props) {
 
     let techname = "";
     if (teacherdata != undefined) {
-        console.log(teacherdata);
+        //console.log(teacherdata);
         for(var k=0;k<teacherdata.lessons.length;k++){
             if (teacherdata.lessons[k].ID == inst) {
                 techname = teacherdata.lessons[k].FIRST_NAME +" "+ teacherdata.lessons[k].LAST_NAME;
