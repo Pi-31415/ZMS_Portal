@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Divider from '@material-ui/core/Divider';
-
+import Smarticon from './smarticon';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 export default function Example(props) {
     const [mydata, setMydata] = useState();
 
@@ -48,6 +51,12 @@ export default function Example(props) {
     }
     return (
         <>
+            <ListItem>
+                <ListItemIcon>
+                    <Smarticon name={classid}></Smarticon>
+                </ListItemIcon>
+                <ListItemText primary="Photos" secondary="Jan 9, 2014" />
+            </ListItem>
             {classdata}
             {datedata}
             {classid}
