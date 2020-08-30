@@ -40,7 +40,10 @@ export default function Example(props) {
         <>
             <Paper style={{ padding: 20, margin: 20 }}>
                 {props.data}
-                {classdata.map((u) => <>{u}</>)}
+                <ul>
+                {classdata.map((u) => <li>{u}</li>)}
+                </ul>
+                
             </Paper>
         </>
     );
