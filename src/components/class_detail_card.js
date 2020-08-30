@@ -56,8 +56,9 @@ export default function Example(props) {
                 <ListItemIcon>
                     <Smarticon name={classid}></Smarticon>
                 </ListItemIcon>
-                <ListItemText primary={classid+': '+classdata} secondary={<Dateparser value={datedata}></Dateparser>} />
-                <ListItemText primary={status} secondary={zoomlink+' '+passcode} />
+                <ListItemText primary={classdata} secondary={<Dateparser value={datedata}></Dateparser>} />
+                <ListItemText primary={status} secondary={classid} />
+                
             </ListItem>
             <Divider />
         </>

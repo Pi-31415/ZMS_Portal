@@ -16,6 +16,7 @@ function Headline(props) {
     return(
     <>
         <Moment format="DD-MMM-YYYY (ddd) hh:mm a">{formatdate(props.value)}</Moment>
+        <br/>
         {' ('+Intl.DateTimeFormat().resolvedOptions().timeZone+' Time)'}
     </>);
 }
