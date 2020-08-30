@@ -39,7 +39,7 @@ export default function Example(props) {
     return (
         <>
             <Paper style={{ padding: 20, margin: 20 }}>
-                {props.data}
+                <h3>{props.data} Lessons</h3>
                 <ul>
                 {classdata.map((u) => <li>{u}</li>)}
                 </ul>
