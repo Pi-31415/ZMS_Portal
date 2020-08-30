@@ -5,6 +5,7 @@ import Smarticon from './smarticon';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
+import Dateparser from './dateparser';
 export default function Example(props) {
     const [mydata, setMydata] = useState();
 
@@ -55,14 +56,9 @@ export default function Example(props) {
                 <ListItemIcon>
                     <Smarticon name={classid}></Smarticon>
                 </ListItemIcon>
-                <ListItemText primary="Photos" secondary="Jan 9, 2014" />
+                <ListItemText primary={classid+': '+classdata} secondary={<Dateparser value={datedata}></Dateparser>} />
+                <ListItemText primary={status} secondary={zoomlink+' '+passcode} />
             </ListItem>
-            {classdata}
-            {datedata}
-            {classid}
-            {status}
-            {zoomlink}
-            {passcode}
             <Divider />
         </>
     );
