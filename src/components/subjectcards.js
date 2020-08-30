@@ -26,11 +26,12 @@ export default function Example(props) {
 
     }, []);
 
-
+    let classdata = [];
     if (mydata != undefined) {
         for(var i=0;i<mydata.lessons.length;i++){
             if(mydata.lessons[i].CLASS_ID == props.data){
-                console.log(mydata.lessons[i].CLASS_ID);
+                console.log(mydata.lessons[i].TOPIC);
+                classdata.push(mydata.lessons[i].TOPIC);
             }
         }
     } 
@@ -39,6 +40,7 @@ export default function Example(props) {
         <>
             <Paper style={{ padding: 20, margin: 20 }}>
                 {props.data}
+                {classdata.map((u) => <>{u}</>)}
             </Paper>
         </>
     );
