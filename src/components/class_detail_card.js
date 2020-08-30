@@ -31,10 +31,12 @@ export default function Example(props) {
     let status = "";
     let zoomlink = "";
     let passcode = "";
+    let classcode = 0;
     if (mydata != undefined) {
         for (var i = mydata.lessons.length - 1; i >= 0; i--) {
             if (mydata.lessons[i].LESSON_ID == props.id) {
                 //console.log(mydata.lessons[i].TOPIC);
+                classcode = i;
                 classdata = mydata.lessons[i].TOPIC;
                 datedata = mydata.lessons[i].START_DATETIME;
                 classid = mydata.lessons[i].CLASS_ID;
