@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
-
+import Divider from '@material-ui/core/Divider';
 
 export default function Example(props) {
     const [mydata, setMydata] = useState();
@@ -37,7 +36,7 @@ export default function Example(props) {
     return (
         <>
             {classdata}
-            <br/>
+            <Divider />
         </>
     );
 }

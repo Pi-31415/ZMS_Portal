@@ -8,6 +8,7 @@ export default function Example(props) {
     const [mydata, setMydata] = useState();
 
     const api_get = "https://zmsedu.com/api/admin/lesson/get";
+    
 
     const refresh = () => {
         axios.post(api_get, {
@@ -40,10 +41,7 @@ export default function Example(props) {
         <>
             <Paper style={{ padding: 20, margin: 20 }}>
                 <h3>{props.data} Lessons</h3>
-                <ul>
                 {classdata.map((u) => <Classdetail id={u}></Classdetail>)}
-                </ul>
-                
             </Paper>
         </>
     );
