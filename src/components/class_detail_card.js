@@ -55,6 +55,8 @@ export default function Example(props) {
 
     const joinzoom = () => {
         alert("Hello");
+        localStorage.setItem("ZOOMID", zoomlink);
+        localStorage.setItem("ZOOMPASS", passcode);
     }
 
     let button = <Button variant="outlined" color="primary" disabled>
