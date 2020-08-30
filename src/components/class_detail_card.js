@@ -53,7 +53,7 @@ export default function Example(props) {
         }
     }
 
-    let button = <Button variant="outlined" color="primary">
+    let button = <Button variant="outlined" color="primary" disabled>
             Join
                 </Button>;
     if (status == "Scheduled") {
@@ -69,7 +69,7 @@ export default function Example(props) {
                     <Smarticon name={classid}></Smarticon>
                 </ListItemIcon>
                 <ListItemText primary={classdata} secondary={<Dateparser value={datedata}></Dateparser>} />
-                <ListItemText primary={status} secondary={<Instructorinfo value={classid}></Instructorinfo>} />
+                <ListItemText primary={status} secondary={<div><Instructorinfo value={classid}></Instructorinfo><br/><>{'Zoom ID: '+zoomlink}<br/>{' Passcode: '+passcode}</></div>} />
                 <ListItemText primary={button} />
             </ListItem>
             <Divider />
