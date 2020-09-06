@@ -82,6 +82,7 @@ export default function Example(props) {
                 <ListItemText primary={button} />
             </ListItem>
             <Filelist lessonid={props.id}></Filelist>
+            <br/>
             <Divider />
         </>
     );
