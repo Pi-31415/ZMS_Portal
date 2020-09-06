@@ -37,11 +37,14 @@ class FileUpload extends React.Component {
     render() {
         return (
             <div>
-            <h3>Class Materials</h3>
+                
+                {
+                    this.state.filelist[0] == undefined ? "" :<h3>Lesson Materials</h3>
+                }
                 <ol>
                     {
                         this.state.filelist[0] == undefined ? "" :
-                        this.state.filelist.map((u) => <li><Individualfile lessonid={this.props.lessonid} homeworkid={this.state.homeworkid} fileid={u.FILE_ID} name={u.NAME}></Individualfile></li>)
+                            this.state.filelist.map((u) => <li><Individualfile lessonid={this.props.lessonid} homeworkid={this.state.homeworkid} fileid={u.FILE_ID} name={u.NAME}></Individualfile></li>)
                     }
                 </ol>
             </div>
