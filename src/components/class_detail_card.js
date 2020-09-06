@@ -8,6 +8,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Dateparser from './dateparser';
 import Instructorinfo from './instructorinfo';
 import Button from '@material-ui/core/Button';
+import Filelist from './filelist';
 export default function Example(props) {
     const [mydata, setMydata] = useState();
 
@@ -80,6 +81,7 @@ export default function Example(props) {
                 <ListItemText primary={status} secondary={<div><Instructorinfo value={classid}></Instructorinfo><br/><>{'Zoom ID: '+zoomlink}<br/>{' Passcode: '+passcode}</></div>} />
                 <ListItemText primary={button} />
             </ListItem>
+            <Filelist lessonid={props.id}></Filelist>
             <Divider />
         </>
     );
